@@ -1,12 +1,13 @@
-import SliderView from '@/scenes/slider/slider-view'
-import axios from 'axios'
+'use client'
+import SwiperView from '@/components/slide/swiper-view'
+import SwiperProvider from '@/scenes/slider/hooks/slider-context'
+import useSlider from '@/scenes/slider/slider-hook'
 
-async function getCommercials() {
-  const { data } = await axios.get('http://localhost:8080/commercial/list')
-  return data.results
-}
-
-export default async function Home() {
-  const commercials = await getCommercials()
-  return <SliderView commercials={commercials} />
+export default function Home() {
+  useSlider()
+  return (
+    <SwiperProvider>
+      <SwiperView />
+    </SwiperProvider>
+  )
 }

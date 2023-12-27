@@ -1,7 +1,7 @@
+import { News } from './news'
+import { Weather } from './weather'
+
 export type Commercial = {
-  type: string
-  title: string
-  image_url: string
-  delay: number
-  qrcode: string
+  news: News
+  weather: Weather
 }
