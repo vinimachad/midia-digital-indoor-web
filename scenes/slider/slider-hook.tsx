@@ -4,7 +4,7 @@ import SlideView from '@/components/slide/slide-view'
 import { useSwiper } from './hooks/slider-context'
 // import CommercialWorker from '@/services/workers/commercial-worker'
 import getCommercial from '@/mocks/commercials-mock'
-import WeatherSlideView from '@/components/slide/weather-slide-view'
+import WeatherSlideView from '@/components/slide/weather/weather-slide-view'
 
 export default function useSlider() {
   // MARK: - Private properties

@@ -5,6 +5,216 @@ export const commercialMock = [
     news: {
       type: 'JPan',
       title:
+        'São Paulo, Rio de Janeiro e Salvador definem as datas para o Carnaval do ano que vem',
+      image_url:
+        'https://jpimg.com.br/uploads/2020/09/fup20230217674-300x170.jpg',
+      delay: 20,
+      qrcode:
+        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/sao-paulo-rio-de-janeiro-e-salvador-definem-as-datas-para-o-carnaval-do-ano-que-vem.html'
+    }
+  },
+  {
+    weather: {
+      city_name: 'Campo Grande',
+      sunrise: '05:59 am',
+      sunset: '07:20 pm',
+      temp: '39º C',
+      description: 'Parcialmente nublado',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+      forecast: [
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
+        }
+      ]
+    }
+  },
+  {
+    news: {
+      type: 'JPan',
+      title:
+        'Impasse sobre vices em SP e favoritismo de Paes no Rio marcam disputa pelas prefeituras a menos de um ano do pleito',
+      image_url:
+        'https://jpimg.com.br/uploads/2022/09/asp20220926004-1-300x170.jpg',
+      delay: 20,
+      qrcode:
+        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/politica/impasse-sobre-vices-em-sp-e-favoritismo-de-paes-no-rio-marcam-disputa-pelas-prefeituras-a-menos-de-um-ano-do-pleito.html'
+    }
+  },
+  {
+    weather: {
+      city_name: 'Campo Grande',
+      sunrise: '05:59 am',
+      sunset: '07:20 pm',
+      temp: '39º C',
+      description: 'Parcialmente nublado',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+      forecast: [
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
+        }
+      ]
+    }
+  },
+  {
+    news: {
+      type: 'JPan',
+      title: 'Homem é preso por enviar drogas pelos Correios',
+      image_url:
+        'https://jpimg.com.br/uploads/2023/12/policia-federal-300x170.jpeg',
+      delay: 20,
+      qrcode:
+        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/homem-e-preso-por-enviar-drogas-pelos-correios.html'
+    }
+  },
+  {
+    weather: {
+      city_name: 'Campo Grande',
+      sunrise: '05:59 am',
+      sunset: '07:20 pm',
+      temp: '39º C',
+      description: 'Parcialmente nublado',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+      forecast: [
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
+        }
+      ]
+    }
+  },
+  {
+    news: {
+      type: 'JPan',
+      title:
+        'Gypsy Rose Blanchard é libertada de prisão nos EUA após matar a mãe por invenção de doenças',
+      image_url: 'https://jpimg.com.br/uploads/2023/12/gypsy-rose-300x170.jpg',
+      delay: 20,
+      qrcode:
+        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/mundo/gypsy-rose-blanchard-e-libertada-de-prisao-nos-eua-apos-matar-a-mae-por-invencao-de-doencas.html'
+    }
+  },
+  {
+    weather: {
+      city_name: 'Campo Grande',
+      sunrise: '05:59 am',
+      sunset: '07:20 pm',
+      temp: '39º C',
+      description: 'Parcialmente nublado',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+      forecast: [
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
+        },
+        {
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
+        }
+      ]
+    }
+  },
+  {
+    news: {
+      type: 'JPan',
+      title:
         'Relembre as cinco decisões do STF que mais impactaram o país em 2023',
       image_url:
         'https://jpimg.com.br/uploads/2023/12/53204395558_8ab30e5434_k-300x170.jpg',
@@ -18,129 +228,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -161,129 +280,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -305,129 +333,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -449,129 +386,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -592,129 +438,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -735,129 +490,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -878,129 +542,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1022,129 +595,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1166,129 +648,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1310,129 +701,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1454,129 +754,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1598,129 +807,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1742,129 +860,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -1886,129 +913,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -2030,129 +966,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
@@ -2174,704 +1019,38 @@ export const commercialMock = [
       city_name: 'Campo Grande',
       sunrise: '05:59 am',
       sunset: '07:20 pm',
-      temp: 39,
+      temp: '39º C',
       description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
+      condition_slug:
+        'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
       forecast: [
         {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 35º C',
+          min: 'Mínima de 21º C',
+          date: 'Qua - 27/12'
         },
         {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 38º C',
+          min: 'Mínima de 23º C',
+          date: 'Qui - 28/12'
         },
         {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          max: 'Máxima de 39º C',
+          min: 'Mínima de 27º C',
+          date: 'Sex - 29/12'
         },
         {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        }
-      ]
-    }
-  },
-  {
-    news: {
-      type: 'JPan',
-      title:
-        'Metrô de São Paulo monta operação especial para a festa da virada na Avenida Paulista; veja como vai funcionar',
-      image_url:
-        'https://jpimg.com.br/uploads/2023/12/fup20231127149-300x170.jpg',
-      delay: 20,
-      qrcode:
-        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/metro-de-sao-paulo-monta-operacao-especial-para-a-festa-da-virada-na-avenida-paulista-veja-como-vai-funcionar.html'
-    }
-  },
-  {
-    weather: {
-      city_name: 'Campo Grande',
-      sunrise: '05:59 am',
-      sunset: '07:20 pm',
-      temp: 39,
-      description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
-      forecast: [
-        {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        }
-      ]
-    }
-  },
-  {
-    news: {
-      type: 'JPan',
-      title:
-        'Réveillon na Paulista terá esquema de segurança especial; confira',
-      image_url:
-        'https://jpimg.com.br/uploads/2023/12/avenida-paulista-300x170.jpg',
-      delay: 20,
-      qrcode:
-        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/reveillon-na-paulista-tera-esquema-de-seguranca-especial-confira.html'
-    }
-  },
-  {
-    weather: {
-      city_name: 'Campo Grande',
-      sunrise: '05:59 am',
-      sunset: '07:20 pm',
-      temp: 39,
-      description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
-      forecast: [
-        {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        }
-      ]
-    }
-  },
-  {
-    news: {
-      type: 'JPan',
-      title: 'Governo central registra déficit de R$ 39 bilhões em novembro',
-      image_url:
-        'https://jpimg.com.br/uploads/2023/11/ballots-1195005_1280-300x170.jpg',
-      delay: 20,
-      qrcode:
-        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/economia/governo-central-registra-deficit-de-r-39-bilhoes-em-novembro.html'
-    }
-  },
-  {
-    weather: {
-      city_name: 'Campo Grande',
-      sunrise: '05:59 am',
-      sunset: '07:20 pm',
-      temp: 39,
-      description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
-      forecast: [
-        {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        }
-      ]
-    }
-  },
-  {
-    news: {
-      type: 'JPan',
-      title:
-        'TJSP determina que Booking indenize clientes por hospedagem cancelada',
-      image_url:
-        'https://jpimg.com.br/uploads/2023/12/imagem-aerea-de-ubatuba-3-scaled-770x578-1-300x170.jpg',
-      delay: 20,
-      qrcode:
-        'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/tjsp-determina-que-booking-indenize-clientes-por-hospedagem-cancelada.html'
-    }
-  },
-  {
-    weather: {
-      city_name: 'Campo Grande',
-      sunrise: '05:59 am',
-      sunset: '07:20 pm',
-      temp: 39,
-      description: 'Parcialmente nublado',
-      condition_slug: 'cloud',
-      forecast: [
-        {
-          date: '27/12',
-          weekday: 'Qua',
-          max: 35,
-          min: 21,
-          cloudiness: 67,
-          rain: 0,
-          rain_probability: 12,
-          wind_speedy: '3.05 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '28/12',
-          weekday: 'Qui',
-          max: 38,
-          min: 23,
-          cloudiness: 17,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.66 km/h',
-          description: 'Parcialmente nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '29/12',
-          weekday: 'Sex',
-          max: 39,
-          min: 27,
-          cloudiness: 87,
-          rain: 0,
-          rain_probability: 6,
-          wind_speedy: '7.28 km/h',
-          description: 'Tempo nublado',
-          condition: 'cloudly_day'
-        },
-        {
-          date: '30/12',
-          weekday: 'Sáb',
-          max: 34,
-          min: 22,
-          cloudiness: 100,
-          rain: 4.45,
-          rain_probability: 91,
-          wind_speedy: '6.12 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '31/12',
-          weekday: 'Dom',
-          max: 34,
-          min: 21,
-          cloudiness: 100,
-          rain: 9.72,
-          rain_probability: 100,
-          wind_speedy: '6.81 km/h',
-          description: 'Chuva',
-          condition: 'rain'
-        },
-        {
-          date: '01/01',
-          weekday: 'Seg',
-          max: 27,
-          min: 21,
-          cloudiness: 100,
-          rain: 7.08,
-          rain_probability: 100,
-          wind_speedy: '2.98 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '02/01',
-          weekday: 'Ter',
-          max: 28,
-          min: 21,
-          cloudiness: 84,
-          rain: 3.1,
-          rain_probability: 69,
-          wind_speedy: '4.85 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '03/01',
-          weekday: 'Qua',
-          max: 34,
-          min: 21,
-          cloudiness: 9,
-          rain: 0,
-          rain_probability: 0,
-          wind_speedy: '4.83 km/h',
-          description: 'Tempo limpo',
-          condition: 'clear_day'
-        },
-        {
-          date: '04/01',
-          weekday: 'Qui',
-          max: 36,
-          min: 22,
-          cloudiness: 70,
-          rain: 0.11,
-          rain_probability: 28,
-          wind_speedy: '3.15 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
-        },
-        {
-          date: '05/01',
-          weekday: 'Sex',
-          max: 37,
-          min: 23,
-          cloudiness: 100,
-          rain: 0.26,
-          rain_probability: 36,
-          wind_speedy: '3.04 km/h',
-          description: 'Chuvas esparsas',
-          condition: 'rain'
+          condition:
+            'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+          max: 'Máxima de 34º C',
+          min: 'Mínima de 22º C',
+          date: 'Sáb - 30/12'
         }
       ]
     }
