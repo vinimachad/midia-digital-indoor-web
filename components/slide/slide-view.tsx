@@ -1,5 +1,5 @@
 import { Commercial } from '@/models/commercials'
-import NewsSlideView from './news-slide-view'
+import NewsSlideView from './news/news-slide-view'
 import WeatherSlideView from './weather-slide-view'
 
 export default function SlideView(props: Commercial) {
