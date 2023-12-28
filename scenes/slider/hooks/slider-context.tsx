@@ -56,7 +56,7 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
 
     swipeInterval = setInterval(
       async () => await handleSwipe(onChangeSlide, onCompleteLoop),
-      1 * 1000
+      60 * 1000
     )
     console.log('criou um intervalo', swipeInterval)
   }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Commercial } from '@/models/commercials'
 import SlideView from '@/components/slide/slide-view'
 import { useSwiper } from './hooks/slider-context'
@@ -45,7 +45,7 @@ export default function useSlider() {
   }
 
   async function _handleOnSlideChange() {
-    await _handleCheckIfFinishedLoopFiveTimes()
+    await _handleCheckIfFinishedLoopSomeTimes()
   }
 
   function _buildSliders() {
@@ -59,8 +59,8 @@ export default function useSlider() {
     loopTimes++
   }
 
-  async function _handleCheckIfFinishedLoopFiveTimes() {
-    if (loopTimes < 1) return
+  async function _handleCheckIfFinishedLoopSomeTimes() {
+    if (loopTimes < 10) return
 
     loopTimes = 0
     removeAllSlides()
