@@ -3,8 +3,13 @@ import { ReactNode } from 'react'
 
 export interface ISwiperContext {
   slides: ReactNode[]
+  currentIndex: number
   removeAllSlides(): void
-  startAutomaticSwipe(): void
+  startAutomaticSwipe(
+    onChangeSlide: (index: number) => Promise<void>,
+    onCompleteLoop: () => Promise<void>
+  ): Promise<void>
+  stopAutomaticSwipe(): void
   addSlides(slide: ReactNode): void
   removeSlideAt(index: number): void
 }
@@ -15,10 +20,14 @@ interface SwiperProviderProps {
 const SwiperContext = createContext<ISwiperContext>({} as ISwiperContext)
 
 export default function SwiperProvider({ children }: SwiperProviderProps) {
-  const [slides, setSlides] = useState<ReactNode[]>([])
   let currentIndex = 0
+  const [slides, setSlides] = useState<ReactNode[]>([])
+  let swipeInterval: NodeJS.Timeout | null = null
 
-  function handleSwipe() {
+  async function handleSwipe(
+    onChangeSlide: (index: number) => Promise<void>,
+    onCompleteLoop: () => Promise<void>
+  ) {
     currentIndex++
     const swiper = document.getElementById('swiper')
     const bodyEl = document.querySelector('body')
@@ -29,14 +38,36 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     if (currentIndex >= slides.length) {
       currentIndex = 0
       swiper.scrollTo(0, 0)
+      await onCompleteLoop()
       return
     }
 
+    await onChangeSlide(currentIndex)
     swiper.scrollBy({ left: slideWidth, behavior: 'smooth' })
   }
 
-  function startAutomaticSwipe() {
-    setInterval(handleSwipe, 10 * 1000)
+  async function startAutomaticSwipe(
+    onChangeSlide: (index: number) => Promise<void>,
+    onCompleteLoop: () => Promise<void>
+  ) {
+    if (swipeInterval) {
+      stopAutomaticSwipe()
+    }
+
+    swipeInterval = setInterval(
+      async () => await handleSwipe(onChangeSlide, onCompleteLoop),
+      1 * 1000
+    )
+    console.log('criou um intervalo', swipeInterval)
+  }
+
+  function stopAutomaticSwipe() {
+    if (swipeInterval) {
+      console.log('limpou intervalo:', swipeInterval)
+      clearInterval(swipeInterval)
+      swipeInterval = null
+      setTimeout(() => {}, 1000)
+    }
   }
 
   function addSlides(slide: ReactNode) {
@@ -58,7 +89,9 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
         addSlides,
         removeAllSlides,
         removeSlideAt,
-        startAutomaticSwipe
+        startAutomaticSwipe,
+        stopAutomaticSwipe,
+        currentIndex
       }}
     >
       {children}

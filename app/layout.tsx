@@ -1,13 +1,15 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Inter } from 'next/font/google'
 import './globals.css'
+import SwiperProvider from '@/scenes/slider/hooks/slider-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Mídia digital indoor',
-  description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
-}
+// export const metadata: Metadata = {
+//   title: 'Mídia digital indoor',
+//   description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
+// }
 
 export default function RootLayout({
   children
@@ -17,8 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <Header /> */}
-        {children}
+        <SwiperProvider>{children}</SwiperProvider>
       </body>
     </html>
   )
