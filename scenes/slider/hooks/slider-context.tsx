@@ -56,14 +56,12 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
 
     swipeInterval = setInterval(
       async () => await handleSwipe(onChangeSlide, onCompleteLoop),
-      60 * 1000
+      2 * 1000
     )
-    console.log('criou um intervalo', swipeInterval)
   }
 
   function stopAutomaticSwipe() {
     if (swipeInterval) {
-      console.log('limpou intervalo:', swipeInterval)
       clearInterval(swipeInterval)
       swipeInterval = null
       setTimeout(() => {}, 1000)

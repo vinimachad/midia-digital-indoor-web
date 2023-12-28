@@ -8,6 +8,7 @@ export default function Home() {
   if (slides.length <= 0) {
     return <span>Carregando</span>
   }
+
   startSwipeLoop()
   return <SwiperView />
 }
