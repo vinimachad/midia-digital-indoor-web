@@ -2,9 +2,8 @@ import { useEffect } from 'react'
 import { Commercial } from '@/models/commercials'
 import SlideView from '@/components/slide/slide-view'
 import { useSwiper } from './hooks/slider-context'
-// import CommercialWorker from '@/services/workers/commercial-worker'
-import getCommercial from '@/mocks/commercials-mock'
-import WeatherSlideView from '@/components/slide/weather/weather-slide-view'
+import CommercialWorker from '@/services/workers/commercial-worker'
+// import getCommercial from '@/mocks/commercials-mock'
 
 export default function useSlider() {
   // MARK: - Private properties
@@ -21,7 +20,7 @@ export default function useSlider() {
 
   // MARK: - Architecture properties
 
-  // const worker = new CommercialWorker()
+  const worker = new CommercialWorker()
 
   useEffect(() => {
     _handleGetCommercials()
@@ -39,8 +38,8 @@ export default function useSlider() {
   // MARK: - Private methods
 
   async function _handleGetCommercials() {
-    // const data = await worker.getCommercials()
-    const data = await getCommercial()
+    const data = await worker.getCommercials()
+    // const data = await getCommercial()
     commercials = data
     _buildSliders()
   }
