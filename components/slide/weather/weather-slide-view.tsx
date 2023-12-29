@@ -15,7 +15,7 @@ export default function WeatherSlideView(props: Weather) {
           className="justify-self-center w-full"
           src={props.condition_slug}
         />
-        <div className="flex flex-col h-full justify-center gap-10">
+        <div className="flex flex-col h-full justify-center gap-10 items-end">
           <h1 className="text-6xl font-bold">{props.temp}</h1>
           <span className="text-4xl font-bold">{props.description}</span>
         </div>
@@ -48,7 +48,7 @@ export default function WeatherSlideView(props: Weather) {
 
   return (
     <div className="min-w-full flex items-center justify-center">
-      <div className="grid grid-rows-2">
+      <div className="grid grid-rows-2 w-full max-w-7xl">
         <Top />
         <Bottom />
       </div>
