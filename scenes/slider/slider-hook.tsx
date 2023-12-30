@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Commercial } from '@/models/commercials'
+import { CommercialPaginationResponse } from '@/models/commercials'
 import SlideView from '@/components/slide/slide-view'
 import { useSwiper } from './hooks/slider-context'
 import CommercialWorker from '@/services/workers/commercial-worker'
@@ -9,7 +9,7 @@ export default function useSlider() {
   // MARK: - Private properties
 
   let loopTimes = 0
-  let commercials: Commercial[] = []
+  let commercialRes: CommercialPaginationResponse
   const {
     addSlides,
     removeAllSlides,
@@ -38,9 +38,9 @@ export default function useSlider() {
   // MARK: - Private methods
 
   async function _handleGetCommercials() {
-    const data = await worker.getCommercials()
+    const data = await worker.getCommercials(1, 5)
     // const data = await getCommercial()
-    commercials = data
+    commercialRes = data
     _buildSliders()
   }
 
@@ -50,7 +50,7 @@ export default function useSlider() {
 
   function _buildSliders() {
     removeAllSlides()
-    commercials.forEach((item) => {
+    commercialRes.data.forEach((item) => {
       addSlides(
         <>
           <SlideView {...item} />

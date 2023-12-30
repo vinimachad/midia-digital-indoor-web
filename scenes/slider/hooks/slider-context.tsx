@@ -32,10 +32,9 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     const swiper = document.getElementById('swiper')
     const bodyEl = document.querySelector('body')
     const slideWidth = bodyEl?.offsetWidth
-
     if (!swiper) return
 
-    if (currentIndex >= slides.length) {
+    if (currentIndex >= slides.length * 2) {
       currentIndex = 0
       swiper.scrollTo(0, 0)
       await onCompleteLoop()
