@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useRef, useState } from 'react'
 import { ReactNode } from 'react'
 
 export interface ISwiperContext {
@@ -21,8 +21,9 @@ const SwiperContext = createContext<ISwiperContext>({} as ISwiperContext)
 
 export default function SwiperProvider({ children }: SwiperProviderProps) {
   let currentIndex = 0
+  const slidesCountRef = useRef(0)
   const [slides, setSlides] = useState<ReactNode[]>([])
-  let swipeInterval: NodeJS.Timeout | null = null
+  let swipeInterval: NodeJS.Timeout | undefined = undefined
 
   async function handleSwipe(
     onChangeSlide: (index: number) => Promise<void>,
@@ -33,8 +34,7 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     const bodyEl = document.querySelector('body')
     const slideWidth = bodyEl?.offsetWidth
     if (!swiper) return
-
-    if (currentIndex >= slides.length * 2) {
+    if (currentIndex >= slidesCountRef.current * 2) {
       currentIndex = 0
       swiper.scrollTo(0, 0)
       await onCompleteLoop()
@@ -49,33 +49,30 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     onChangeSlide: (index: number) => Promise<void>,
     onCompleteLoop: () => Promise<void>
   ) {
-    if (swipeInterval) {
-      stopAutomaticSwipe()
-    }
-
+    stopAutomaticSwipe()
     swipeInterval = setInterval(
       async () => await handleSwipe(onChangeSlide, onCompleteLoop),
-      10 * 1000
+      30 * 1000
     )
   }
 
   function stopAutomaticSwipe() {
-    if (swipeInterval) {
-      clearInterval(swipeInterval)
-      swipeInterval = null
-      setTimeout(() => {}, 1000)
-    }
+    clearInterval(swipeInterval)
+    swipeInterval = undefined
   }
 
   function addSlides(slide: ReactNode) {
+    slidesCountRef.current += 1
     setSlides((prev) => [...prev, slide])
   }
 
   function removeAllSlides() {
+    slidesCountRef.current = 0
     setSlides([])
   }
 
   function removeSlideAt(index: number) {
+    slidesCountRef.current -= 1
     setSlides((prev) => prev.filter((_, i) => i !== index))
   }
 

@@ -23,22 +23,22 @@ export default function useSlider() {
   const worker = new CommercialWorker()
 
   useEffect(() => {
-    _handleGetCommercials()
+    _start()
   }, [])
-
-  // MARK: - Public methods
-
-  async function startSwipeLoop() {
-    await startAutomaticSwipe(
-      _handleOnSlideChange,
-      _handleIncreaseLoopTimesIfNeeded
-    )
-  }
 
   // MARK: - Private methods
 
-  async function _handleGetCommercials() {
-    const data = await worker.getCommercials(1, 5)
+  async function _start(page: number = 1, limit: number = 5) {
+    await _handleGetCommercials(page, limit)
+    await _startSwipeLoop()
+  }
+
+  async function _startSwipeLoop() {
+    await startAutomaticSwipe(_handleOnSlideChange, _handleOnCompleteLoop)
+  }
+
+  async function _handleGetCommercials(page: number = 1, limit: number = 5) {
+    const data = await worker.getCommercials(page, limit)
     // const data = await getCommercial()
     commercialRes = data
     _buildSliders()
@@ -50,7 +50,7 @@ export default function useSlider() {
 
   function _buildSliders() {
     removeAllSlides()
-    commercialRes.data.forEach((item) => {
+    commercialRes?.data.forEach((item) => {
       addSlides(
         <>
           <SlideView {...item} />
@@ -59,18 +59,34 @@ export default function useSlider() {
     })
   }
 
+  // MARK: - On Complete loop logic methods
+
+  async function _handleOnCompleteLoop() {
+    _handleIncreaseLoopTimesIfNeeded()
+    let next = { limit: 5, page: 1 }
+    if (commercialRes?.next) {
+      next = commercialRes.next
+    }
+
+    await _handleRestartLoop(next.page, next.limit)
+  }
+
   async function _handleIncreaseLoopTimesIfNeeded() {
     loopTimes++
   }
 
-  async function _handleCheckIfFinishedLoopSomeTimes() {
-    if (loopTimes < 10) return
-
+  async function _handleRestartLoop(page: number = 1, limit: number = 5) {
     loopTimes = 0
     removeAllSlides()
     stopAutomaticSwipe()
-    await _handleGetCommercials()
+    await _start(page, limit)
   }
 
-  return { startSwipeLoop, slides }
+  async function _handleCheckIfFinishedLoopSomeTimes() {
+    if (loopTimes < 10) return
+    // TODO: - Implement invoke of /update in background
+    await _handleRestartLoop()
+  }
+
+  return { slides }
 }
