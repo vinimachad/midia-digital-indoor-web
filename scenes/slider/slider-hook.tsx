@@ -2,12 +2,15 @@ import { useEffect } from 'react'
 import { CommercialPaginationResponse } from '@/models/commercials'
 import SlideView from '@/components/slide/slide-view'
 import { useSwiper } from './hooks/slider-context'
-import CommercialWorker from '@/services/workers/commercial-worker'
+import CommercialWorker, {
+  ICommercialWorker
+} from '@/services/workers/commercial-worker'
 // import getCommercial from '@/mocks/commercials-mock'
 
 export default function useSlider() {
   // MARK: - Private properties
 
+  const maxLoopTimes = 10
   let loopTimes = 0
   let commercialRes: CommercialPaginationResponse
   const {
@@ -20,7 +23,7 @@ export default function useSlider() {
 
   // MARK: - Architecture properties
 
-  const worker = new CommercialWorker()
+  const worker: ICommercialWorker = new CommercialWorker()
 
   useEffect(() => {
     _start()
@@ -44,9 +47,7 @@ export default function useSlider() {
     _buildSliders()
   }
 
-  async function _handleOnSlideChange() {
-    await _handleCheckIfFinishedLoopSomeTimes()
-  }
+  async function _handleOnSlideChange() {}
 
   function _buildSliders() {
     removeAllSlides()
@@ -62,8 +63,8 @@ export default function useSlider() {
   // MARK: - On Complete loop logic methods
 
   async function _handleOnCompleteLoop() {
-    _handleIncreaseLoopTimesIfNeeded()
-    let next = { limit: 5, page: 1 }
+    _handleIncreaseLoopTimes()
+    let next = { page: 1, limit: 5 }
     if (commercialRes?.next) {
       next = commercialRes.next
     }
@@ -71,21 +72,27 @@ export default function useSlider() {
     await _handleRestartLoop(next.page, next.limit)
   }
 
-  async function _handleIncreaseLoopTimesIfNeeded() {
+  async function _handleIncreaseLoopTimes() {
     loopTimes++
   }
 
   async function _handleRestartLoop(page: number = 1, limit: number = 5) {
+    removeAllSlides()
+    stopAutomaticSwipe()
+
+    if (loopTimes < maxLoopTimes) {
+      await _start(page, limit)
+    } else {
+      await _handleUpdateCommercialsAndRestart()
+    }
+  }
+
+  async function _handleUpdateCommercialsAndRestart() {
     loopTimes = 0
     removeAllSlides()
     stopAutomaticSwipe()
-    await _start(page, limit)
-  }
-
-  async function _handleCheckIfFinishedLoopSomeTimes() {
-    if (loopTimes < 10) return
-    // TODO: - Implement invoke of /update in background
-    await _handleRestartLoop()
+    await worker?.updateCommercials()
+    await _start()
   }
 
   return { slides }
