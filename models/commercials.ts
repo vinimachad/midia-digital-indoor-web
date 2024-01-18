@@ -15,4 +15,5 @@ export type CommercialPaginationResponse = {
 export type Commercial = {
   news?: News
   weather?: Weather
+  banners?: { url: string }[]
 }
