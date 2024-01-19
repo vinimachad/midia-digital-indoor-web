@@ -52,7 +52,7 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     stopAutomaticSwipe()
     swipeInterval = setInterval(
       async () => await handleSwipe(onChangeSlide, onCompleteLoop),
-      30 * 1000
+      40 * 1000
     )
   }
 
