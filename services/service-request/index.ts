@@ -2,7 +2,7 @@ import { IRequestProvider } from './request-provider'
 
 export default class ServiceRequest {
   static shared: ServiceRequest = new ServiceRequest()
-  BASE_PATH = 'http://localhost:8080/'
+  BASE_PATH = process.env.NEXT_PUBLIC_BASE_URL
   private constructor() {}
 
   async request<Response>(provider: IRequestProvider): Promise<Response> {
