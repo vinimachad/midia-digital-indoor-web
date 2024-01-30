@@ -1,0 +1,17 @@
+
+.title-label {
+    @apply text-xl md:text-2xl font-bold leading-5 md:leading-6
+}
+
+.form-container {
+    @apply flex flex-col items-center justify-center bg-white p-8 gap-4;
+    border-radius: 12px
+}
+
+.input {
+    @apply w-full h-14 w-full p-3 min-w-[400px];
+    
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: rgba(188, 200, 214, 1);
+}

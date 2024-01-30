@@ -1,7 +1,7 @@
 'use client'
 
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../styles/globals.scss'
 import SwiperProvider from '@/scenes/slider/hooks/slider-context'
 
 const inter = Inter({ subsets: ['latin'] })
