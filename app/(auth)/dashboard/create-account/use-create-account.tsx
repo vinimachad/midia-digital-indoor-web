@@ -1,11 +1,14 @@
-import { CreateUserInfos } from '@/models/user/User'
-import { useCallback, useState } from 'react'
+import CreateAccountWorker from '@/services/workers/create-account-worker'
+import { FormEvent, useCallback, useState } from 'react'
 
 export default function useCreateAccount() {
-  const [user, setUser] = useState<CreateUserInfos>({} as CreateUserInfos)
+  const worker = new CreateAccountWorker()
+  const [user, setUser] = useState<CreateAccount.Request>(
+    {} as CreateAccount.Request
+  )
 
   const handleUpdate = useCallback(
-    (key: keyof CreateUserInfos, value: string) => {
+    (key: keyof CreateAccount.Request, value: string) => {
       setUser((prev) => {
         return { ...prev, [key]: value }
       })
@@ -13,11 +16,17 @@ export default function useCreateAccount() {
     []
   )
 
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const response = await worker.createAccount(user)
+  }
+
   return {
     handleUpdateEmail: (value: string) => handleUpdate('email', value),
-    handleUpdateFullName: (value: string) => handleUpdate('fullName', value),
+    handleUpdateFullName: (value: string) => handleUpdate('full_name', value),
     handleUpdatePhoneNumber: (value: string) =>
-      handleUpdate('phoneNumber', value),
-    handleUpdatePassword: (value: string) => handleUpdate('password', value)
+      handleUpdate('phone_number', value),
+    handleUpdatePassword: (value: string) => handleUpdate('password', value),
+    handleSubmit
   }
 }
