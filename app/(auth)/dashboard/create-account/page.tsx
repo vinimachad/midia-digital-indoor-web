@@ -2,14 +2,28 @@
 import { Button } from '@/components/ui/button'
 import useCreateAccount from './use-create-account'
 import Input from '@/components/ui/input'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 export default function CreateAccount() {
   const createAccountViewModel = useCreateAccount()
+
+  function buildAlertIfNeeded() {
+    if (createAccountViewModel.alert && createAccountViewModel.alert.show) {
+      const alert = createAccountViewModel.alert
+      return (
+        <Alert variant={'destructive'}>
+          <AlertTitle>{alert.title}</AlertTitle>
+          <AlertDescription>{alert.message}</AlertDescription>
+        </Alert>
+      )
+    }
+  }
 
   return (
     <main className="overflow-x-hidden max-w-[100vw] bg-slate-100">
       <div className="flex items-center justify-center w-full h-full min-h-screen">
         <div className="form-container">
+          {buildAlertIfNeeded()}
           <div className="w-full content-start">
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
