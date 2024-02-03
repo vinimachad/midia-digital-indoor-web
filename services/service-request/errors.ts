@@ -7,7 +7,18 @@ export type APIError = {
 
 export type APIZodError = {
   name: string
-  issues: any[]
+  issues: ZodIssue[]
+}
+
+export type ZodIssue = {
+  validation?: string
+  code?: string
+  minimum?: number
+  type?: string
+  inclusive?: boolean
+  exact?: boolean
+  message?: string
+  path?: string[]
 }
 
 export type ResponseError = APIError | APIZodError

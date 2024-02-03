@@ -1,46 +1,40 @@
 import {
   APIError,
-  APIZodError,
-  ResponseError
+  ResponseError,
+  ZodIssue
 } from '@/services/service-request/errors'
 import { useState } from 'react'
 
 type Alert = { show: boolean; title?: string; message?: string }
+export type InputError =
+  | { field: string; message: string | undefined }
+  | undefined
 
 export default function useHandlerError() {
   // MARK: - Public properties
 
   const [alert, setAlert] = useState<Alert | null>(null)
+  const [inputErrors, setInputErrors] = useState<InputError[]>()
 
   // MARK: - Public methods
 
-  function handleError(error: ResponseError) {
-    switch (error.name) {
-      case 'ZodError':
-        _handleZodError(error as APIZodError)
-        break
-      case 'APIError':
-        _handleAPIError(error as APIError)
-        break
-    }
-  }
-
-  function handleReset() {
+  function handleResetAlert() {
     setAlert(null)
   }
 
-  // MARK: - Private methods
-
-  function _handleZodError(error: APIZodError) {
-    // Todo
+  function handleResetInput(field: string) {
+    setInputErrors((prev) => {
+      return prev?.filter((i) => i?.field != field)
+    })
   }
 
-  function _handleAPIError(error: APIError) {
-    if (error.message || error.title) {
+  function handleAPIError(error: ResponseError) {
+    const { message, title } = error as APIError
+    if (message || title) {
       setAlert({
         show: true,
-        title: error.title,
-        message: error.message
+        title,
+        message
       })
     } else {
       setAlert({
@@ -51,5 +45,19 @@ export default function useHandlerError() {
     }
   }
 
-  return { alert, handleError, handleReset }
+  function handleZodError(error: ZodIssue[]) {
+    const issues = error.map((issue) => {
+      if (issue.path) return { field: issue.path[0], message: issue.message }
+    })
+    setInputErrors(issues)
+  }
+
+  return {
+    alert,
+    inputErrors,
+    handleAPIError,
+    handleResetAlert,
+    handleZodError,
+    handleResetInput
+  }
 }

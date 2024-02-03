@@ -9,9 +9,18 @@
 }
 
 .input {
-    @apply w-full h-14 w-full p-3 min-w-[400px];
+    @apply w-full h-14 w-full p-3 min-w-[400px] outline-none;
     
     border-width: 1px;
     border-radius: 8px;
     border-color: rgba(188, 200, 214, 1);
+}
+
+.destructive-input {
+    @apply border-destructive/50 text-destructive dark:border-destructive placeholder-destructive [&>svg]:text-destructive outline-none;
+    border-width: 3px;
+}
+
+.supporting-text {
+    @apply text-sm;
 }
