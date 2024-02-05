@@ -2,7 +2,6 @@
 
 import { Inter } from 'next/font/google'
 import '../styles/globals.scss'
-import SwiperProvider from '@/scenes/slider/hooks/slider-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,16 +10,10 @@ const inter = Inter({ subsets: ['latin'] })
 //   description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
 // }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SwiperProvider>{children}</SwiperProvider>
-      </body>
+    <html lang="pt-BR">
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

@@ -25,10 +25,7 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
   const [slides, setSlides] = useState<ReactNode[]>([])
   let swipeInterval: NodeJS.Timeout | undefined = undefined
 
-  async function handleSwipe(
-    onChangeSlide: (index: number) => Promise<void>,
-    onCompleteLoop: () => Promise<void>
-  ) {
+  async function handleSwipe(onChangeSlide: (index: number) => Promise<void>, onCompleteLoop: () => Promise<void>) {
     currentIndex++
     const swiper = document.getElementById('swiper')
     const bodyEl = document.querySelector('body')
@@ -50,10 +47,7 @@ export default function SwiperProvider({ children }: SwiperProviderProps) {
     onCompleteLoop: () => Promise<void>
   ) {
     stopAutomaticSwipe()
-    swipeInterval = setInterval(
-      async () => await handleSwipe(onChangeSlide, onCompleteLoop),
-      20 * 1000
-    )
+    swipeInterval = setInterval(async () => await handleSwipe(onChangeSlide, onCompleteLoop), 20 * 1000)
   }
 
   function stopAutomaticSwipe() {

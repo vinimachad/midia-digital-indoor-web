@@ -1,14 +1,8 @@
-import {
-  APIError,
-  ResponseError,
-  ZodIssue
-} from '@/services/service-request/errors'
+import { APIError, ResponseError, ZodIssue } from '@/services/service-request/errors'
 import { useState } from 'react'
 
 type Alert = { show: boolean; title?: string; message?: string }
-export type InputError =
-  | { field: string; message: string | undefined }
-  | undefined
+export type InputError = { field: string; message: string | undefined } | undefined
 
 export default function useHandlerError() {
   // MARK: - Public properties

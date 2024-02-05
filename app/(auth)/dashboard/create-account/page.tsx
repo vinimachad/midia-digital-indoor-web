@@ -27,10 +27,7 @@ export default function CreateAccount() {
           <div className="w-full content-start">
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
-          <form
-            onSubmit={createAccountViewModel.handleSubmit}
-            className="grid gap-4 w-full"
-          >
+          <form onSubmit={createAccountViewModel.handleSubmit} className="grid gap-4 w-full">
             <Input
               name="full_name"
               type="text"
@@ -61,7 +58,7 @@ export default function CreateAccount() {
             <div className="flex items-center justify-center w-full">
               <span className="">Concordo com os termos de privacidade</span>
             </div>
-            <Button variant={'default'} size="lg" type="submit">
+            <Button isLoading={createAccountViewModel.isLoading} variant={'default'} size="lg" type="submit">
               Criar conta
             </Button>
           </form>
