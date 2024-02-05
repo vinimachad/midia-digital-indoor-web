@@ -4,8 +4,6 @@ import useHandlerError from '../use-handler-error'
 import UserWorker from '@/services/workers/user-worker'
 import { FormEvent, useCallback, useState } from 'react'
 import { useAuth } from '@/contexts/auth'
-import Router from 'next/router'
-import { useRouter } from 'next/navigation'
 
 export default function useCreateAccount() {
   // MARK: - Private properties
@@ -13,7 +11,6 @@ export default function useCreateAccount() {
   const _worker = new UserWorker()
   const [_user, _setUser] = useState<User.CreateAccount.Request>({} as User.CreateAccount.Request)
   const { successUserAuthenticated } = useAuth()
-  const router = useRouter()
 
   // MARK: - Public properties
 
@@ -48,7 +45,7 @@ export default function useCreateAccount() {
   // MARK: - Private methods
 
   async function _handleSuccessCreateAccount({ token_jwt }: User.CreateAccount.Response) {
-    const { error, value } = await _worker.refreshToken({ token_jwt })
+    const { value } = await _worker.refreshToken({ token_jwt })
     if (value?.refresh_token) successUserAuthenticated({ ..._user, refresh_token: value.refresh_token })
   }
 
