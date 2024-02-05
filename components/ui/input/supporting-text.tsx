@@ -13,9 +13,7 @@ const variants = tv({
   }
 })
 
-interface SupportingTextProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof variants> {}
+interface SupportingTextProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof variants> {}
 
 export function SupportingText({ theme, ...props }: SupportingTextProps) {
   return <span className={variants({ theme })}>{props.children}</span>

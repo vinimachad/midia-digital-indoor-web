@@ -36,6 +36,7 @@ export default function CreateAccount() {
               error={createAccountViewModel.findErrorByField('full_name')}
             />
             <Input
+              mask="phone"
               name="phone_number"
               placeholder="Celular com DDD"
               onTextChange={createAccountViewModel.handleUpdatePhoneNumber}
