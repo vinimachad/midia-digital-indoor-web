@@ -3,11 +3,13 @@ import { User } from '@/models/user/user'
 import useHandlerError from '../use-handler-error'
 import { useCallback, useState } from 'react'
 import { createAccount } from '../../actions'
+import { useRouter } from 'next/navigation'
 
 export default function useCreateAccount() {
   // MARK: - Private properties
 
   const [_user, _setUser] = useState<User.CreateAccount.Request>({} as User.CreateAccount.Request)
+  const router = useRouter()
 
   // MARK: - Public properties
 
@@ -27,7 +29,14 @@ export default function useCreateAccount() {
   async function handleSubmit() {
     await _handleForm(async () => {
       setIsLoading(true)
-      await createAccount(_user, { failure: handleAPIError, success: () => {} })
+      const { error, value } = await createAccount(_user)
+
+      if (error) {
+        handleAPIError(error)
+      } else if (value) {
+        router.push('/dashboard')
+      }
+
       setIsLoading(false)
     })
   }
