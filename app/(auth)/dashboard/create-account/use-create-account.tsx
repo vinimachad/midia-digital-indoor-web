@@ -1,16 +1,13 @@
 import z from 'zod'
 import { User } from '@/models/user/user'
 import useHandlerError from '../use-handler-error'
-import UserWorker from '@/services/workers/user-worker'
-import { FormEvent, useCallback, useState } from 'react'
-import { useAuth } from '@/contexts/auth'
+import { useCallback, useState } from 'react'
+import { createAccount } from '../../actions'
 
 export default function useCreateAccount() {
   // MARK: - Private properties
 
-  const _worker = new UserWorker()
   const [_user, _setUser] = useState<User.CreateAccount.Request>({} as User.CreateAccount.Request)
-  const { successUserAuthenticated } = useAuth()
 
   // MARK: - Public properties
 
@@ -27,14 +24,11 @@ export default function useCreateAccount() {
     })
   }, [])
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  async function handleSubmit() {
     await _handleForm(async () => {
       setIsLoading(true)
-      const { error, value: res } = await _worker.createAccount(_user)
+      await createAccount(_user, { failure: handleAPIError, success: () => {} })
       setIsLoading(false)
-      if (error) return handleAPIError(error)
-      if (res) return await _handleSuccessCreateAccount(res)
     })
   }
 
@@ -43,11 +37,6 @@ export default function useCreateAccount() {
   }
 
   // MARK: - Private methods
-
-  async function _handleSuccessCreateAccount({ token_jwt }: User.CreateAccount.Response) {
-    const { value } = await _worker.refreshToken({ token_jwt })
-    if (value?.refresh_token) successUserAuthenticated({ ..._user, refresh_token: value.refresh_token })
-  }
 
   async function _handleForm(success: () => void) {
     const required_error = 'Este campo é obrigatório'

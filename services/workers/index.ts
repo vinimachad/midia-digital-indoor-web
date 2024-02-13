@@ -5,9 +5,7 @@ import { IRequestProvider } from '../service-request/request-provider'
 export default class BaseWorker {
   constructor(private serviceRequest: ServiceRequest = ServiceRequest.shared) {}
 
-  async fetch<Response>(
-    provider: IRequestProvider
-  ): Promise<Result<Response, ResponseError>> {
+  async fetch<Response>(provider: IRequestProvider): Promise<Result<Response, ResponseError>> {
     return await this.serviceRequest.request(provider)
   }
 

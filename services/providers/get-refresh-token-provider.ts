@@ -8,6 +8,6 @@ export default class GetRefreshTokenProvider implements IRequestProvider {
   headers?: HeadersInit | undefined
 
   constructor(private request: User.RefreshToken.Request) {
-    this.headers = { authorization: `Bearer ${request.token_jwt}` }
+    this.headers = { authorization: `Bearer ${request.refresh_token}` }
   }
 }

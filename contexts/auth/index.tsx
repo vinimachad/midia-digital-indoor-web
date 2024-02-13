@@ -15,11 +15,12 @@ export function AuthProvider({ children }: AuthContext.ProviderProps) {
 
   function successUserAuthenticated(data: User.Infos & User.RefreshToken.Response) {
     setUser({ ...data })
-    _setAuthenticationCookies(data.refresh_token)
+    _setAuthenticationCookies({ ...data })
   }
 
-  function _setAuthenticationCookies(refresh_token: string) {
-    setCookie(undefined, 'midia-digital-indoor.token', refresh_token, { maxAge: 60 * 60 * 1 })
+  function _setAuthenticationCookies({ access_token, refresh_token }: User.RefreshToken.Response) {
+    setCookie(undefined, 'midia-digital-indoor.refresh_token', refresh_token, { maxAge: 60 * 60 * 1 })
+    setCookie(undefined, 'midia-digital-indoor.access_token', access_token, { maxAge: 60 * 60 * 1 })
     router.push('/dashboard')
   }
 

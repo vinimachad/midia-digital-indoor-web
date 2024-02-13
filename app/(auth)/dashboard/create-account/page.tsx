@@ -27,7 +27,7 @@ export default function CreateAccount() {
           <div className="w-full content-start">
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
-          <form onSubmit={createAccountViewModel.handleSubmit} className="grid gap-4 w-full">
+          <form action={createAccountViewModel.handleSubmit} className="grid gap-4 w-full">
             <Input
               name="full_name"
               type="text"

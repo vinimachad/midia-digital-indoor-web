@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import InputMask from 'react-input-mask'
 import { SupportingText } from './supporting-text'

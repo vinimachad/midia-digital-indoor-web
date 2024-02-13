@@ -1,3 +1,5 @@
-export default function Login() {
-  return <h1>Login</h1>
+import Login from '@/scenes/dashboard/auth/login/page'
+
+export default async function LoginPage() {
+  return <Login />
 }

@@ -5,4 +5,5 @@ export interface IRequestProvider extends RequestInit {
   method: HTTPMethods
   headers?: HeadersInit
   next?: NextFetchRequestConfig
+  body?: any
 }
