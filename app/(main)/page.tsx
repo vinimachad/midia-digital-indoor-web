@@ -1,6 +1,6 @@
 'use client'
-import Loading from '@/components/loading'
-import SwiperView from '@/components/slide/swiper-view'
+import Loading from '@/scenes/slider/hooks/loading'
+import SwiperView from '@/scenes/slider/components/swiper-view'
 import useSlider from '@/scenes/slider/slider-hook'
 
 export default function Home() {

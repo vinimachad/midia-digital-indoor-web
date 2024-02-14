@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { CommercialPaginationResponse } from '@/models/commercials'
-import SlideView from '@/components/slide/slide-view'
+import SlideView from '@/scenes/slider/components/slide-view'
 import { useSwiper } from './hooks/slider-context'
 import CommercialWorker, { ICommercialWorker } from '@/services/workers/commercial-worker'
 import { ResponseError } from '@/services/service-request/errors'

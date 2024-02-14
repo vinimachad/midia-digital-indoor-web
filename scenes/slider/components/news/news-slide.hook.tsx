@@ -1,6 +1,6 @@
 import { News } from '@/models/news'
 import { ReactNode, useEffect, useState } from 'react'
-import jpLogo from '../../../public/assets/jp-logo.png'
+import jpLogo from '@/public/assets/jp-logo.png'
 import Image from 'next/image'
 
 export type Properties = {
