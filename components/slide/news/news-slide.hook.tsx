@@ -26,9 +26,7 @@ export default function useNewsSlide(news: News) {
       case 'JPan':
         setProperties({
           backgroundColor: 'bg-black',
-          logo: (
-            <Image src={jpLogo} alt="jovem pan logo" width={305} height={60} />
-          ),
+          logo: <Image src={jpLogo} alt="jovem pan logo" width={305} height={60} />,
           name: 'Jovem Pan'
         })
     }

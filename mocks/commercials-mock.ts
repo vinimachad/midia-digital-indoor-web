@@ -11,15 +11,13 @@ export const commercialMock = {
     data: [
       {
         id: '3df92c3b-e5b0-42d7-bbcc-1f7aa5d0f8bc',
-        newsId:
-          'noticias-brasil-problemas-no-acesso-ao-site-do-inep-dificultam-consulta-dos-resultados-do-enem-2023',
+        newsId: 'noticias-brasil-problemas-no-acesso-ao-site-do-inep-dificultam-consulta-dos-resultados-do-enem-2023',
         weatherId: '455947',
         createdAt: '2024-01-16T22:11:22.948Z',
         news: {
           id: 'noticias-brasil-problemas-no-acesso-ao-site-do-inep-dificultam-consulta-dos-resultados-do-enem-2023',
           type: 'JPan',
-          title:
-            'Problemas de acesso ao site do Inep dificultam consulta dos resultados do Enem 2023',
+          title: 'Problemas de acesso ao site do Inep dificultam consulta dos resultados do Enem 2023',
           image_url: 'https://jpimg.com.br/uploads/2021/11/inep-300x170.jpg',
           qrcode:
             'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/problemas-no-acesso-ao-site-do-inep-dificultam-consulta-dos-resultados-do-enem-2023.html',
@@ -32,8 +30,7 @@ export const commercialMock = {
           description: 'Parcialmente nublado',
           sunrise: '06:25 am',
           sunset: '07:34 pm',
-          condition_slug:
-            'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+          condition_slug: 'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
           city_name: 'Corumbá',
           created_at: '2023-12-29T22:55:30.661Z',
           forecast: [
@@ -45,8 +42,7 @@ export const commercialMock = {
               max: 'Máxima de 38º C',
               min: 'Mínima de 24º C',
               description: 'Tempo limpo',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
               created_at: '2023-12-29T22:55:30.661Z',
               weatherId: '455947'
             },
@@ -58,8 +54,7 @@ export const commercialMock = {
               max: 'Máxima de 39º C',
               min: 'Mínima de 25º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.661Z',
               weatherId: '455947'
             },
@@ -71,8 +66,7 @@ export const commercialMock = {
               max: 'Máxima de 40º C',
               min: 'Mínima de 23º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.661Z',
               weatherId: '455947'
             },
@@ -84,8 +78,7 @@ export const commercialMock = {
               max: 'Máxima de 37º C',
               min: 'Mínima de 23º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.661Z',
               weatherId: '455947'
             }
@@ -94,17 +87,14 @@ export const commercialMock = {
       },
       {
         id: '8f6ce469-5210-477c-86ab-80b3f8dea707',
-        newsId:
-          'noticias-mundo-israel-diz-que-fase-intensiva-dos-combates-em-gaza-terminara-em-breve',
+        newsId: 'noticias-mundo-israel-diz-que-fase-intensiva-dos-combates-em-gaza-terminara-em-breve',
         weatherId: '26804347',
         createdAt: '2024-01-16T22:11:22.934Z',
         news: {
           id: 'noticias-mundo-israel-diz-que-fase-intensiva-dos-combates-em-gaza-terminara-em-breve',
           type: 'JPan',
-          title:
-            'Israel diz que fase intensiva dos combates em Gaza terminará ‘em breve’',
-          image_url:
-            'https://jpimg.com.br/uploads/2024/01/israel-em-gaza-300x170.jpg',
+          title: 'Israel diz que fase intensiva dos combates em Gaza terminará ‘em breve’',
+          image_url: 'https://jpimg.com.br/uploads/2024/01/israel-em-gaza-300x170.jpg',
           qrcode:
             'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/mundo/israel-diz-que-fase-intensiva-dos-combates-em-gaza-terminara-em-breve.html',
           delay: 20,
@@ -116,8 +106,7 @@ export const commercialMock = {
           description: 'Parcialmente nublado',
           sunrise: '06:11 am',
           sunset: '07:24 pm',
-          condition_slug:
-            'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+          condition_slug: 'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
           city_name: 'Campo Grande',
           created_at: '2023-12-29T22:48:30.931Z',
           forecast: [
@@ -129,8 +118,7 @@ export const commercialMock = {
               max: 'Máxima de 32º C',
               min: 'Mínima de 22º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:48:30.931Z',
               weatherId: '26804347'
             },
@@ -142,8 +130,7 @@ export const commercialMock = {
               max: 'Máxima de 34º C',
               min: 'Mínima de 24º C',
               description: 'Parcialmente nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
               created_at: '2023-12-29T22:48:30.931Z',
               weatherId: '26804347'
             },
@@ -155,8 +142,7 @@ export const commercialMock = {
               max: 'Máxima de 37º C',
               min: 'Mínima de 24º C',
               description: 'Tempo limpo',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
               created_at: '2023-12-29T22:48:30.931Z',
               weatherId: '26804347'
             },
@@ -168,8 +154,7 @@ export const commercialMock = {
               max: 'Máxima de 34º C',
               min: 'Mínima de 22º C',
               description: 'Tempo nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
               created_at: '2023-12-29T22:48:30.931Z',
               weatherId: '26804347'
             }
@@ -185,10 +170,8 @@ export const commercialMock = {
         news: {
           id: 'noticias-mundo-deslocados-em-gaza-vivem-em-tendas-improvisadas-e-lutam-contra-o-frio-queimando-plasticos',
           type: 'JPan',
-          title:
-            'Deslocados em Gaza vivem em tendas improvisadas e lutam contra o frio queimando plásticos',
-          image_url:
-            'https://jpimg.com.br/uploads/2024/01/tendas-em-gaza-300x170.jpg',
+          title: 'Deslocados em Gaza vivem em tendas improvisadas e lutam contra o frio queimando plásticos',
+          image_url: 'https://jpimg.com.br/uploads/2024/01/tendas-em-gaza-300x170.jpg',
           qrcode:
             'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/mundo/deslocados-em-gaza-vivem-em-tendas-improvisadas-e-lutam-contra-o-frio-queimando-plasticos.html',
           delay: 20,
@@ -200,8 +183,7 @@ export const commercialMock = {
           description: 'Parcialmente nublado',
           sunrise: '05:33 am',
           sunset: '06:58 pm',
-          condition_slug:
-            'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+          condition_slug: 'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
           city_name: 'São Paulo',
           created_at: '2023-12-29T22:55:30.738Z',
           forecast: [
@@ -213,8 +195,7 @@ export const commercialMock = {
               max: 'Máxima de 33º C',
               min: 'Mínima de 23º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.738Z',
               weatherId: '455827'
             },
@@ -226,8 +207,7 @@ export const commercialMock = {
               max: 'Máxima de 33º C',
               min: 'Mínima de 21º C',
               description: 'Parcialmente nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
               created_at: '2023-12-29T22:55:30.738Z',
               weatherId: '455827'
             },
@@ -239,8 +219,7 @@ export const commercialMock = {
               max: 'Máxima de 34º C',
               min: 'Mínima de 22º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.738Z',
               weatherId: '455827'
             },
@@ -252,8 +231,7 @@ export const commercialMock = {
               max: 'Máxima de 31º C',
               min: 'Mínima de 23º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.738Z',
               weatherId: '455827'
             }
@@ -262,17 +240,14 @@ export const commercialMock = {
       },
       {
         id: '3402791a-3e1d-45ce-b6fa-16e23044c3a0',
-        newsId:
-          'noticias-mundo-avioes-se-chocam-em-solo-durante-nevasca-no-aeroporto-do-japao',
+        newsId: 'noticias-mundo-avioes-se-chocam-em-solo-durante-nevasca-no-aeroporto-do-japao',
         weatherId: '457088',
         createdAt: '2024-01-16T22:11:22.902Z',
         news: {
           id: 'noticias-mundo-avioes-se-chocam-em-solo-durante-nevasca-no-aeroporto-do-japao',
           type: 'JPan',
-          title:
-            'Aviões se chocam em solo durante nevasca no aeroporto do Japão',
-          image_url:
-            'https://jpimg.com.br/uploads/2024/01/fotografia-14-300x170.png',
+          title: 'Aviões se chocam em solo durante nevasca no aeroporto do Japão',
+          image_url: 'https://jpimg.com.br/uploads/2024/01/fotografia-14-300x170.png',
           qrcode:
             'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/mundo/avioes-se-chocam-em-solo-durante-nevasca-no-aeroporto-do-japao.html',
           delay: 20,
@@ -284,8 +259,7 @@ export const commercialMock = {
           description: 'Tempo nublado',
           sunrise: '06:15 am',
           sunset: '07:21 pm',
-          condition_slug:
-            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          condition_slug: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
           city_name: 'Coxim',
           created_at: '2023-12-29T22:55:30.720Z',
           forecast: [
@@ -297,8 +271,7 @@ export const commercialMock = {
               max: 'Máxima de 36º C',
               min: 'Mínima de 24º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.720Z',
               weatherId: '457088'
             },
@@ -310,8 +283,7 @@ export const commercialMock = {
               max: 'Máxima de 38º C',
               min: 'Mínima de 25º C',
               description: 'Parcialmente nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
               created_at: '2023-12-29T22:55:30.720Z',
               weatherId: '457088'
             },
@@ -323,8 +295,7 @@ export const commercialMock = {
               max: 'Máxima de 36º C',
               min: 'Mínima de 22º C',
               description: 'Parcialmente nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloud.svg',
               created_at: '2023-12-29T22:55:30.720Z',
               weatherId: '457088'
             },
@@ -336,8 +307,7 @@ export const commercialMock = {
               max: 'Máxima de 30º C',
               min: 'Mínima de 22º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.720Z',
               weatherId: '457088'
             }
@@ -346,17 +316,14 @@ export const commercialMock = {
       },
       {
         id: '9ecb52de-7af0-4490-a834-8e9c9a073189',
-        newsId:
-          'noticias-brasil-patricia-lelis-e-procurada-pelo-fbi-por-fraude-milionaria-nos-eua',
+        newsId: 'noticias-brasil-patricia-lelis-e-procurada-pelo-fbi-por-fraude-milionaria-nos-eua',
         weatherId: '456335',
         createdAt: '2024-01-16T22:11:22.888Z',
         news: {
           id: 'noticias-brasil-patricia-lelis-e-procurada-pelo-fbi-por-fraude-milionaria-nos-eua',
           type: 'JPan',
-          title:
-            'Patricia Lélis é procurada pelo FBI por fraude milionária nos EUA',
-          image_url:
-            'https://jpimg.com.br/uploads/2024/01/patricia-lelis-300x170.jpg',
+          title: 'Patricia Lélis é procurada pelo FBI por fraude milionária nos EUA',
+          image_url: 'https://jpimg.com.br/uploads/2024/01/patricia-lelis-300x170.jpg',
           qrcode:
             'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://jovempan.com.br/noticias/brasil/patricia-lelis-e-procurada-pelo-fbi-por-fraude-milionaria-nos-eua.html',
           delay: 20,
@@ -368,8 +335,7 @@ export const commercialMock = {
           description: 'Tempo nublado',
           sunrise: '06:18 am',
           sunset: '07:31 pm',
-          condition_slug:
-            'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+          condition_slug: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
           city_name: 'Miranda',
           created_at: '2023-12-29T22:55:30.702Z',
           forecast: [
@@ -381,8 +347,7 @@ export const commercialMock = {
               max: 'Máxima de 40º C',
               min: 'Mínima de 25º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.702Z',
               weatherId: '456335'
             },
@@ -394,8 +359,7 @@ export const commercialMock = {
               max: 'Máxima de 41º C',
               min: 'Mínima de 24º C',
               description: 'Tempo limpo',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/clear_day.svg',
               created_at: '2023-12-29T22:55:30.702Z',
               weatherId: '456335'
             },
@@ -407,8 +371,7 @@ export const commercialMock = {
               max: 'Máxima de 36º C',
               min: 'Mínima de 23º C',
               description: 'Chuvas esparsas',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/rain.svg',
               created_at: '2023-12-29T22:55:30.702Z',
               weatherId: '456335'
             },
@@ -420,8 +383,7 @@ export const commercialMock = {
               max: 'Máxima de 39º C',
               min: 'Mínima de 24º C',
               description: 'Tempo nublado',
-              condition:
-                'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
+              condition: 'https://assets.hgbrasil.com/weather/icons/conditions/cloudly_day.svg',
               created_at: '2023-12-29T22:55:30.702Z',
               weatherId: '456335'
             }

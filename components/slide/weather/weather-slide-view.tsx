@@ -11,10 +11,7 @@ export default function WeatherSlideView(props: Weather) {
             <span className="text-4xl font-bold">{props.sunset}</span>
           </div>
         </div>
-        <img
-          className="justify-self-center w-full"
-          src={props.condition_slug}
-        />
+        <img className="justify-self-center w-full" src={props.condition_slug} />
         <div className="flex flex-col h-full justify-center gap-10 items-end">
           <h1 className="text-6xl font-bold">{props.temp}</h1>
           <span className="text-4xl font-bold">{props.description}</span>
