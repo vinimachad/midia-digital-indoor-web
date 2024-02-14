@@ -2,7 +2,7 @@
 import React from 'react'
 import InputMask from 'react-input-mask'
 import { SupportingText } from './supporting-text'
-import { InputError } from '@/app/(auth)/dashboard/use-handler-error'
+import { InputError } from '@/scenes/dashboard/auth/use-handler-error'
 import unmask, { masks } from './masks'
 
 type Masks = typeof masks

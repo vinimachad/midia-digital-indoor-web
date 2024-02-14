@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { User } from '@/models/user/user'
 import { loginAction } from './server-actions/login-action'
-import useHandlerError from '@/app/(auth)/dashboard/use-handler-error'
+import useHandlerError from '@/scenes/dashboard/auth/use-handler-error'
 import { useRouter } from 'next/navigation'
 import { useCallback, useState } from 'react'
 

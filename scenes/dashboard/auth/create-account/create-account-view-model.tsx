@@ -2,10 +2,10 @@ import z from 'zod'
 import { User } from '@/models/user/user'
 import useHandlerError from '../use-handler-error'
 import { useCallback, useState } from 'react'
-import { createAccount } from '../../actions'
+import { createAccount } from './actions'
 import { useRouter } from 'next/navigation'
 
-export default function useCreateAccount() {
+export default function CreateAccountViewModel() {
   // MARK: - Private properties
 
   const [_user, _setUser] = useState<User.CreateAccount.Request>({} as User.CreateAccount.Request)
