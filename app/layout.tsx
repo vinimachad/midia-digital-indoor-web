@@ -1,26 +1,18 @@
-'use client'
-
 import { Inter } from 'next/font/google'
-import './globals.css'
-import SwiperProvider from '@/scenes/slider/hooks/slider-context'
+import '../styles/globals.scss'
+import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata: Metadata = {
-//   title: 'Mídia digital indoor',
-//   description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
-// }
+export const metadata: Metadata = {
+  title: 'Mídia digital indoor',
+  description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
+}
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SwiperProvider>{children}</SwiperProvider>
-      </body>
+    <html lang="pt-BR">
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

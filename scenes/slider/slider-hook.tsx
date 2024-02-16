@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
 import { CommercialPaginationResponse } from '@/models/commercials'
-import SlideView from '@/components/slide/slide-view'
+import SlideView from '@/scenes/slider/components/slide-view'
 import { useSwiper } from './hooks/slider-context'
-import CommercialWorker, {
-  ICommercialWorker
-} from '@/services/workers/commercial-worker'
-// import getCommercial from '@/mocks/commercials-mock'
+import CommercialWorker, { ICommercialWorker } from '@/services/workers/commercial-worker'
+import { ResponseError } from '@/services/service-request/errors'
 
 export default function useSlider() {
   // MARK: - Private properties
@@ -13,13 +11,7 @@ export default function useSlider() {
   const maxLoopTimes = 10
   let loopTimes = 0
   let commercialRes: CommercialPaginationResponse
-  const {
-    addSlides,
-    removeAllSlides,
-    slides,
-    startAutomaticSwipe,
-    stopAutomaticSwipe
-  } = useSwiper()
+  const { addSlides, removeAllSlides, slides, startAutomaticSwipe, stopAutomaticSwipe } = useSwiper()
 
   // MARK: - Architecture properties
 
@@ -41,22 +33,21 @@ export default function useSlider() {
   }
 
   async function _handleGetCommercials(page: number = 1, limit: number = 5) {
-    const data = await worker.getCommercials(page, limit)
-    // const data = await getCommercial()
-    commercialRes = data
-    _buildSliders()
+    const { error, value } = await worker.getCommercials(page, limit)
+    if (error) return _handleApiError(error)
+
+    if (value) {
+      commercialRes = value
+      _buildSliders()
+    }
   }
 
   async function _handleOnSlideChange() {}
 
   function _buildSliders() {
     removeAllSlides()
-    commercialRes?.data.forEach((item) => {
-      addSlides(
-        <>
-          <SlideView {...item} />
-        </>
-      )
+    commercialRes?.data.forEach((item, index) => {
+      addSlides(<SlideView key={index} {...item} />)
     })
   }
 
@@ -93,6 +84,12 @@ export default function useSlider() {
     stopAutomaticSwipe()
     await worker?.updateCommercials()
     await _start()
+  }
+
+  // MARK: - API Request handlers
+
+  async function _handleApiError(error: ResponseError) {
+    console.log(error)
   }
 
   return { slides }

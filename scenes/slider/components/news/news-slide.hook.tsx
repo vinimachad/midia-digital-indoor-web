@@ -1,6 +1,6 @@
 import { News } from '@/models/news'
 import { ReactNode, useEffect, useState } from 'react'
-import jpLogo from '../../../public/assets/jp-logo.png'
+import jpLogo from '@/public/assets/jp-logo.png'
 import Image from 'next/image'
 
 export type Properties = {
@@ -26,9 +26,7 @@ export default function useNewsSlide(news: News) {
       case 'JPan':
         setProperties({
           backgroundColor: 'bg-black',
-          logo: (
-            <Image src={jpLogo} alt="jovem pan logo" width={305} height={60} />
-          ),
+          logo: <Image src={jpLogo} alt="jovem pan logo" width={305} height={60} />,
           name: 'Jovem Pan'
         })
     }
