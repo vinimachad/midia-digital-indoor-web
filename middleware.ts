@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
 
   const token = cookies.refreshToken.get
   if (isPublicPath && token) {
-    return NextResponse.redirect(new URL('/dashboard', request.nextUrl))
+    return NextResponse.redirect(new URL('/dashboard/overview', request.nextUrl))
   }
 
   if (!isPublicPath && !token) {
@@ -19,5 +19,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard', '/dashboard/login', '/dashboard/create-account']
+  matcher: ['/dashboard', '/dashboard/overview', '/dashboard/login', '/dashboard/create-account']
 }
