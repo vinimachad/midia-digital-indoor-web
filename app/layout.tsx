@@ -1,14 +1,13 @@
-'use client'
-
 import { Inter } from 'next/font/google'
 import '../styles/globals.scss'
+import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata: Metadata = {
-//   title: 'Mídia digital indoor',
-//   description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
-// }
+export const metadata: Metadata = {
+  title: 'Mídia digital indoor',
+  description: 'Seu painel de detalhes e estatísticas sobre suas propagandas.'
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
