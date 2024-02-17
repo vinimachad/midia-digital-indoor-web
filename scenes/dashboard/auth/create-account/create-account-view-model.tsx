@@ -34,7 +34,7 @@ export default function CreateAccountViewModel() {
       if (error) {
         handleAPIError(error)
       } else if (value) {
-        router.push('/dashboard')
+        router.push('/dashboard/overview')
       }
 
       setIsLoading(false)

@@ -1,5 +1,10 @@
 export namespace User {
+  export type Request = {
+    access_token: string
+  }
+
   export type Infos = {
+    id?: string
     full_name: string
     phone_number: string
     email: string

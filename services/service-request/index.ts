@@ -21,6 +21,10 @@ export default class ServiceRequest {
 
   // MARK: - Setters
 
+  setAuthorization(access_token: string) {
+    this.setHeader({ Authorization: 'Bearer '.concat(access_token) })
+  }
+
   setHeader(headers: TSObject) {
     Object.keys(headers).forEach((key) => {
       if (Object.hasOwn(this.defaultHeaders, key)) {
