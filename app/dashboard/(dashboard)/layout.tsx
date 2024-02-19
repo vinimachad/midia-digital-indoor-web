@@ -1,4 +1,4 @@
-import Header from '@/scenes/dashboard/dashboard/shared/components/header'
+import Header from '@/scenes/dashboard/dashboard/shared/components/header/header'
 import { UserProvider } from '@/scenes/dashboard/dashboard/shared/context/user/user-context'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {

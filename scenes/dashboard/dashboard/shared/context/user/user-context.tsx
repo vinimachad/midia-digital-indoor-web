@@ -9,8 +9,9 @@ import deleteCookiesAction from '../../actions/delete-cookies-action'
 const UserContext = createContext<UserContext.Context>({} as UserContext.Context)
 
 export function UserProvider({ children }: UserContext.ProviderProps) {
-  const [user, setUser] = useState<User.Infos & { access_token: string }>()
+  const [user, setUser] = useState<(User.Infos & { access_token: string }) | undefined>()
   const router = useRouter()
+
   useEffect(() => {
     _getUser()
   }, [])
