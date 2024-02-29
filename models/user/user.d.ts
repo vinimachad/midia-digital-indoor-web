@@ -3,11 +3,20 @@ export namespace User {
     access_token: string
   }
 
+  export type SubscriptionSummary = {
+    status: string
+    value?: number
+    plan_type?: string
+    period_end?: Date
+    period_start?: Date
+  }
+
   export type Infos = {
     id?: string
     full_name: string
     phone_number: string
     email: string
+    subscription: SubscriptionSummary
   }
 
   export namespace CreateAccount {
