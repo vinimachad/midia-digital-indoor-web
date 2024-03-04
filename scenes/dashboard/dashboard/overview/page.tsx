@@ -1,10 +1,9 @@
 'use client'
-import { useUser } from '../shared/context/user/user-context'
+import { User } from '@/models/user/user'
 import SubscriptionOfferView from './components/not-subscriber-view'
 import SubscriberView from './components/subscriber-view'
 
-export default function Overview() {
-  const { user } = useUser()
+export default function Overview({ user }: { user: User.Infos | undefined }) {
   if (!user) return <h1>Carregando...</h1>
   return (
     <section className="py-8 h-full">

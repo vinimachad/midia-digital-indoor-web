@@ -1,10 +1,9 @@
 import '@/utils/extension/string'
 import { usePathname } from 'next/navigation'
-import { useUser } from '../../context/user/user-context'
+import { User } from '@/models/user/user'
 
-export default function HeaderViewModel() {
+export default function HeaderViewModel(user: User.Infos | undefined) {
   const path = usePathname()
-  const { user } = useUser()
   const paths = {
     overview: '/dashboard/overview',
     config: '/dashboard/configurations'

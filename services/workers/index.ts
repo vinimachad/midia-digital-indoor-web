@@ -13,7 +13,6 @@ export default class BaseWorker {
     try {
       await this.serviceRequest.requestVoid(provider)
     } catch (error) {
-      console.log(error)
       throw new Error()
     }
   }
