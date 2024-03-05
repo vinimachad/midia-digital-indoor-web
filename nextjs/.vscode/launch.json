@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/pages/slides/slider-view/slider-view-model.tsx",
+            "program": "${workspaceFolder}/scenes/slider/slider-view.tsx",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
