@@ -1,4 +1,4 @@
-import Loading from '../../../components/loadings/slider-loading'
+import Loading from '@components/loadings/slider-loading'
 import SliderViewModel from './slider-view-model'
 
 export default function SliderView() {

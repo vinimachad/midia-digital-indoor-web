@@ -19,6 +19,14 @@ export default function ServiceRequest() {
     return await fetch(api.put(path, data, config))
   }
 
+  async function post<Response>(
+    path: string,
+    data?: any,
+    config?: AxiosRequestConfig<any>
+  ): Promise<APIResponse<Response>> {
+    return await fetch(api.post(path, data, config))
+  }
+
   async function fetch(request: Promise<AxiosResponse<any, any>>) {
     try {
       const { data } = await request
@@ -29,5 +37,5 @@ export default function ServiceRequest() {
     }
   }
 
-  return { get, put }
+  return { get, put, post }
 }

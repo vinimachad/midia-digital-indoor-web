@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Slider } from '../../../types/slider'
-import { useSlider } from '../../../hooks/context/slider-context'
-import SlidersContainer from '../../../components/sliders/sliders-container'
-import commercial from '../../../models/commercial'
+import { useSlider } from '@hooks/context/slider-context'
+import commercial from '@models/commercial'
+import SlidersContainer from '@components/sliders/sliders-container'
+import { Slider } from '@type/slider'
 
 export default function SliderViewModel() {
   // MARK: - Private properties
