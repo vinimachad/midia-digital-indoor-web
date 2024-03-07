@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
 import Input from '@components/input/input'
 import { Link } from 'react-router-dom'
 
-export default function Login() {
+export default function LoginPage() {
   const { handleSubmit, alert, findErrorByField, handleUpdate, isLoading } = LoginViewModel()
 
   function buildAlertIfNeeded() {
