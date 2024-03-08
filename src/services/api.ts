@@ -3,8 +3,7 @@ import { APIResponse } from '../types/api'
 import AppError from '../models/app-error'
 const api = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
-  headers: { 'Content-Type': 'application/json' },
-  withCredentials: true
+  headers: { 'Content-Type': 'application/json' }
 })
 
 export default function ServiceRequest() {

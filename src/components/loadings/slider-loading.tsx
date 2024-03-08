@@ -1,4 +1,4 @@
-import loading from '../../../public/assets/Loading.png'
+import loading from '../../../assets/Loading.png'
 export default function Loading() {
   return (
     <div className="min-w-full min-h-screen flex items-center justify-center flex-col">

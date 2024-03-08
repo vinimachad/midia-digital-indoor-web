@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react'
-import jpLogo from '../../../../public/assets/jp-logo.png'
+import jpLogo from '../../../../assets/jp-logo.png'
 import { Slider } from '../../../types/slider'
 
 export type Properties = {

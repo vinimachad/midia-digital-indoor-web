@@ -27,6 +27,12 @@
       "@lib/*": [
         "./lib/*"
       ],
+      "@utils/*": [
+        "./utils/*"
+      ],
+      "@routes/*": [
+        "./routes/*"
+      ],
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
