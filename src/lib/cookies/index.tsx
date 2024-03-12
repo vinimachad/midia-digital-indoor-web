@@ -11,7 +11,7 @@ export default {
       Cookie.set(ACCESS_TOKEN_KEY, value, {
         expires: (() => {
           const date = new Date()
-          date.setHours(date.getHours() + 1) // TODO: Receive the expire hour from api
+          date.setUTCHours(date.getUTCHours() + 1) // TODO: Receive the expire hour from api
           return date
         })()
       })

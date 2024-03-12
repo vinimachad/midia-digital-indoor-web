@@ -16,8 +16,8 @@ const AuthContext = createContext({} as IAuthContext)
 export function AuthProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate()
   const [user, setUser] = useState<User.Infos | null>(null)
-  const isAuthenticated = !!user
-  const [userIsLoading, setUserIsLoading] = useState(false)
+  const isAuthenticated = user != null
+  const [userIsLoading, setUserIsLoading] = useState(true)
 
   useEffect(() => {
     const accessToken = cookies.accessToken.get()

@@ -9,47 +9,47 @@ const serviceRequest = ServiceRequest()
 async function login(req: User.Login.Request): Promise<APIResponse<User.Login.Response>> {
   const result = await serviceRequest.post<User.Login.Response>('/user/login', req)
   setCookies(result.value)
+  serviceRequest.setAuthorization(result.value?.access_token ?? '')
   return result
 }
 
 async function register(req: User.CreateAccount.Request): Promise<APIResponse<User.CreateAccount.Response>> {
   const result = await serviceRequest.post<User.CreateAccount.Response>('/user/register', req)
   setCookies(result.value)
+  serviceRequest.setAuthorization(result.value?.access_token ?? '')
   return result
 }
 
-async function infos(req: User.Request): Promise<APIResponse<User.Infos>> {
-  return await serviceRequest.get('/user/infos', { headers: { Authorization: `Bearer ${req.access_token}` } })
+async function infos(): Promise<APIResponse<User.Infos>> {
+  return await serviceRequest.get('/user/infos')
 }
 
-async function refreshToken(req: User.RefreshToken.Request): Promise<APIResponse<User.RefreshToken.Response>> {
-  const result = await serviceRequest.get<User.RefreshToken.Response>('/user/refresh-token', {
-    headers: { Authorization: `Bearer ${req.refresh_token}` }
-  })
+async function refreshToken(): Promise<APIResponse<User.RefreshToken.Response>> {
+  const result = await serviceRequest.get<User.RefreshToken.Response>('/user/refresh-token')
   setCookies(result.value)
+  serviceRequest.setAuthorization(result.value?.access_token ?? '')
   return result
 }
 
 async function validateUser() {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
+  await new Promise((res) => setTimeout(res, 5000))
   const accessTkn = cookies.accessToken.get()
   const refreshTkn = cookies.refreshToken.get()
-
   if (accessTkn || refreshTkn) {
-    if (accessTkn) {
-      const { value, error } = await infos({ access_token: accessTkn })
-      if (value) return value
+    serviceRequest.setAuthorization(accessTkn ?? '')
+    const { value, error } = await infos()
+    if (value) return value
 
-      const apiError = error as AppErrorTypes.APIError
-      if (apiError.status_code === 401 && refreshTkn) {
-        const { value, error } = await refreshToken({ refresh_token: refreshTkn })
-        if (value) {
-          return await validateUser()
-        } else if (error) {
-          cookies.accessToken.delete()
-          cookies.refreshToken.delete()
-          return undefined
-        }
+    const apiError = error as AppErrorTypes.APIError
+    if (apiError.status_code === 401 && refreshTkn) {
+      serviceRequest.setAuthorization(refreshTkn)
+      const { value, error } = await refreshToken()
+      if (value) {
+        return await validateUser()
+      } else if (error) {
+        cookies.accessToken.delete()
+        cookies.refreshToken.delete()
+        return undefined
       }
     }
   }

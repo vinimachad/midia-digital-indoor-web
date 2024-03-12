@@ -1,10 +1,17 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { APIResponse } from '../types/api'
 import AppError from '../models/app-error'
+import cookies from '@lib/cookies'
 const api = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
   headers: { 'Content-Type': 'application/json' }
 })
+
+const accessToken = cookies.accessToken.get()
+const refreshToken = cookies.refreshToken.get()
+if (accessToken || refreshToken) {
+  api.defaults.headers['Authorization'] = `Bearer ${accessToken ? accessToken : refreshToken ? refreshToken : ''}`
+}
 
 export default function ServiceRequest() {
   async function get<Response>(path: string, config?: AxiosRequestConfig<any>): Promise<APIResponse<Response>> {
@@ -37,5 +44,9 @@ export default function ServiceRequest() {
     }
   }
 
-  return { get, put, post }
+  async function setAuthorization(token: string) {
+    api.defaults.headers['Authorization'] = `Bearer ${token}`
+  }
+
+  return { get, put, post, setAuthorization }
 }
