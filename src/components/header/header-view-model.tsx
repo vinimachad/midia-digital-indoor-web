@@ -1,9 +1,11 @@
 import '@utils/strings+utils'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '@hooks/context/auth-context'
+import { useState } from 'react'
 
 export default function HeaderViewModel() {
-  const { user, userIsLoading } = useAuth()
+  const { user, userIsLoading, logout } = useAuth()
+  const [openDialog, setOpenDialog] = useState(false)
   const { pathname } = useLocation()
   const paths = {
     overview: '/dashboard/overview',
@@ -26,6 +28,9 @@ export default function HeaderViewModel() {
     email: user?.email,
     getUserInitials,
     getUserName,
-    userIsLoading
+    userIsLoading,
+    logout,
+    setOpenDialog,
+    openDialog
   }
 }

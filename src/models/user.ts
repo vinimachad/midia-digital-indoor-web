@@ -31,8 +31,13 @@ async function refreshToken(): Promise<APIResponse<User.RefreshToken.Response>> 
   return result
 }
 
+async function removeCookies() {
+  // cookies.accessToken.delete()
+  // cookies.refreshToken.delete()
+  cookies.all.delete()
+}
+
 async function validateUser() {
-  await new Promise((res) => setTimeout(res, 5000))
   const accessTkn = cookies.accessToken.get()
   const refreshTkn = cookies.refreshToken.get()
   if (accessTkn || refreshTkn) {
@@ -67,5 +72,6 @@ export default Object.freeze({
   login,
   register,
   refreshToken,
-  validateUser
+  validateUser,
+  removeCookies
 })

@@ -40,7 +40,10 @@ export default function LoginPage() {
               error={findErrorByField('password')}
               onTextChange={() => handleUpdate('password')}
             />
-            <div className="flex flex-1 justify-end">
+            <div className="flex flex-1 justify-between">
+              <Link to={'/register'} className="text-primary underline-offset-4 hover:underline">
+                Criar minha conta
+              </Link>
               <Link to={'/dashboard/forgot-password'} className="text-primary underline-offset-4 hover:underline">
                 Esqueceu a senha?
               </Link>

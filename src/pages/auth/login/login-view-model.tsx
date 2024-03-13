@@ -4,6 +4,7 @@ import useHandlerError from '@hooks/error/use-handler-error'
 import { User } from '@type/user'
 import userModel from '@models/user'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '@hooks/context/auth-context'
 
 const required_error = 'Este campo é obrigatório'
 const loginSchema = z.object({
@@ -15,6 +16,7 @@ type LoginInput = z.infer<typeof loginSchema>
 export default function LoginViewModel() {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
+  const { validateUser } = useAuth()
   const { handleZodError, inputErrors, handleResetInput, handleAPIError, handleResetAlert, alert } = useHandlerError()
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -29,7 +31,7 @@ export default function LoginViewModel() {
       if (error) {
         handleAPIError(error)
       } else if (value) {
-        navigate('/dashboard/overview')
+        validateUser().then(() => navigate('/dashboard/overview', { replace: true }))
       }
 
       setIsLoading(false)

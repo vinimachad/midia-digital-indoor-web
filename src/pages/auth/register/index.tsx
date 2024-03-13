@@ -2,6 +2,7 @@ import Input from '@components/input/input'
 import { Button } from '@components/ui/button'
 import RegisterViewModel from './register-view-model'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
+import { Link } from 'react-router-dom'
 
 export default function RegisterPage() {
   const createAccountViewModel = RegisterViewModel()
@@ -55,12 +56,17 @@ export default function RegisterPage() {
               onTextChange={createAccountViewModel.handleUpdatePassword}
               error={createAccountViewModel.findErrorByField('password')}
             />
-            <div className="flex items-center justify-center w-full">
-              <span className="">Concordo com os termos de privacidade</span>
+            <div className="flex items-center justify-end w-full">
+              <Link to={'/login'} className="text-primary underline-offset-4 hover:underline">
+                Já tenho uma conta
+              </Link>
             </div>
             <Button isLoading={createAccountViewModel.isLoading} variant={'default'} size="lg" type="submit">
               Criar conta
             </Button>
+            <Link to={'/register'} className="place-self-center text-primary underline-offset-4 hover:underline">
+              Concordo com os termos de privacidade
+            </Link>
           </form>
         </div>
       </div>

@@ -4,9 +4,12 @@ import { Command, CommandGroup, CommandItem, CommandList, CommandSeparator } fro
 import { Avatar, AvatarFallback } from '@components/ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { Skeleton } from '@components/ui/skeleton'
+import { UserIcon, CogIcon as ConfigIcon, CreditCardIcon, LogOutIcon } from 'lucide-react'
+import DropOutDialog from '@components/drop-out-dialog'
 
 export default function Header() {
-  const { path, paths, email, getUserInitials, getUserName, userIsLoading } = HeaderViewModel()
+  const { path, paths, email, getUserInitials, getUserName, userIsLoading, logout, openDialog, setOpenDialog } =
+    HeaderViewModel()
   return (
     <header className="sticky top-0 z-50 w-full h-14 flex items-center justify-center border-b-[1px] border-slate-200 bg-white">
       <nav className="grid max-w-screen-2xl w-full h-full grid-cols-2">
@@ -45,33 +48,62 @@ export default function Header() {
                 </PopoverTrigger>
                 <PopoverContent>
                   <Command>
-                    <div className="px-2 py-1.5 text-sm font-normal">
-                      <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium leading-none">shadcn</p>
-                        <p className="text-xs leading-none text-muted-foreground">m@example.com</p>
-                      </div>
-                    </div>
-                    <CommandSeparator />
                     <CommandList>
                       <CommandGroup>
-                        <CommandItem>
-                          <span>Calendar</span>
+                        <CommandItem className="gap-x-2">
+                          <UserIcon size={18} />
+                          <span>Perfil</span>
                         </CommandItem>
-                        <CommandItem>
-                          <span>Search Emoji</span>
+                        <CommandItem className="gap-x-2">
+                          <ConfigIcon size={18} />
+                          <span>Configurações</span>
                         </CommandItem>
-                        <CommandItem>
-                          <span>Launch</span>
+                        <CommandItem className="gap-x-2">
+                          <CreditCardIcon size={18} />
+                          <span>Ver meu plano</span>
+                        </CommandItem>
+                        <CommandSeparator />
+                        <CommandItem onSelect={() => setOpenDialog(true)} className="gap-x-2">
+                          <LogOutIcon size={18} />
+                          <span>Sair</span>
                         </CommandItem>
                       </CommandGroup>
                     </CommandList>
                   </Command>
                 </PopoverContent>
               </Popover>
+              <Dialog openDialog={openDialog} logout={logout} closeDialog={() => setOpenDialog(false)} />
             </li>
           </ul>
         )}
       </nav>
     </header>
+  )
+}
+
+function Dialog({
+  logout,
+  closeDialog,
+  openDialog
+}: {
+  openDialog: boolean
+  closeDialog: () => void
+  logout: () => void
+}) {
+  return (
+    <DropOutDialog
+      openDialog={openDialog}
+      configs={{
+        title: 'Você tem certeza de que deseja sair?',
+        description: 'Se sair vai ter que logar novamente para acessar as informações das suas propagandas.',
+        buttons: {
+          cancel: { action: closeDialog },
+          main: {
+            title: 'Sair mesmo assim',
+            action: logout
+          }
+        }
+      }}
+    />
   )
 }

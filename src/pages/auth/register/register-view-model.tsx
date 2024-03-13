@@ -4,11 +4,13 @@ import { User } from '@type/user'
 import useHandlerError from '@hooks/error/use-handler-error'
 import { useNavigate } from 'react-router-dom'
 import userModel from '@models/user'
+import { useAuth } from '@hooks/context/auth-context'
 
 export default function RegisterViewModel() {
   // MARK: - Private properties
 
   const [_user, _setUser] = useState<User.CreateAccount.Request>({} as User.CreateAccount.Request)
+  const { validateUser } = useAuth()
   const navigate = useNavigate()
 
   // MARK: - Public properties
@@ -35,7 +37,7 @@ export default function RegisterViewModel() {
       if (error) {
         handleAPIError(error)
       } else if (value) {
-        navigate('/dashboard/overview')
+        validateUser().then(() => navigate('/dashboard/overview', { replace: true }))
       }
 
       setIsLoading(false)

@@ -5,6 +5,8 @@ import RegisterPage from '@pages/auth/register'
 import Dashboard from '@pages/dashboard'
 import AuthLayout from './layouts/AuthLayout'
 import ProtectedRoute from './utils/protected'
+import SubscriptionOfferWrapper from '@components/wrappers/subscription-offer-wrapper'
+import Overview from '@pages/dashboard/overview'
 
 const routes = () => {
   return (
@@ -15,7 +17,7 @@ const routes = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Dashboard />}>
-            <Route path="/dashboard/overview" element={<h1>Overview</h1>} />
+            <Route path="/dashboard/overview" element={<SubscriptionOfferWrapper element={<Overview />} />} />
           </Route>
         </Route>
       </Route>

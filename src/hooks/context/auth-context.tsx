@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router-dom'
 interface IAuthContext {
   isAuthenticated: boolean
   user: User.Infos | null
-  setUserLoggedIn: (user: User.Infos) => void
   userIsLoading: boolean
+  validateUser: () => Promise<void>
+  logout: () => void
 }
 
 const AuthContext = createContext({} as IAuthContext)
@@ -20,29 +21,38 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [userIsLoading, setUserIsLoading] = useState(true)
 
   useEffect(() => {
+    validateUser()
+  }, [])
+
+  async function validateUser() {
     const accessToken = cookies.accessToken.get()
     const refreshToken = cookies.refreshToken.get()
     if (accessToken || refreshToken) {
       setUserIsLoading(true)
       userModel.validateUser().then((user) => {
         if (!user) {
-          navigate('/login')
+          navigateToLogin()
           return
         }
         setUserIsLoading(false)
         setUser(user)
       })
     } else {
-      navigate('/login')
+      navigateToLogin()
     }
-  }, [])
+  }
 
-  async function setUserLoggedIn(user: User.Infos) {
-    setUser(user)
+  function logout() {
+    userModel.removeCookies()
+    navigateToLogin()
+  }
+
+  function navigateToLogin() {
+    navigate('/login', { replace: true })
   }
 
   return (
-    <AuthContext.Provider value={{ userIsLoading, isAuthenticated, user, setUserLoggedIn }}>
+    <AuthContext.Provider value={{ userIsLoading, isAuthenticated, user, validateUser, logout }}>
       {children}
     </AuthContext.Provider>
   )

@@ -4,6 +4,14 @@ const ACCESS_TOKEN_KEY = 'access_token'
 const REFRESH_TOKEN_KEY = 'refresh_token'
 
 export default {
+  all: {
+    delete: () => {
+      const allCookies = Cookie.get()
+      Object.keys(allCookies).forEach((key) => {
+        Cookie.remove(key)
+      })
+    }
+  },
   accessToken: {
     get: () => Cookie.get(ACCESS_TOKEN_KEY),
     delete: () => Cookie.remove(ACCESS_TOKEN_KEY),
