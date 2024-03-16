@@ -1,4 +1,4 @@
-import PresentationChart from '@components/charts/line'
+import PresentationChart from '@components/charts/presentation-chart'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 

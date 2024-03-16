@@ -31,9 +31,7 @@ export default function PresentationChart() {
           },
           tooltip: {
             callbacks: {
-              title: (context: TooltipItem<'line'>[]) => {
-                return ''
-              },
+              title: () => '',
               label: (context: TooltipItem<'line'>) => {
                 return `No dia ${context.label} sua propaganda foi apresentada ${context.raw} vezes.`
               }
