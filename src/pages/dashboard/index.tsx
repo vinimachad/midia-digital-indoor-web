@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom'
 
 export default function Dashboard() {
   return (
-    <main className="flex flex-1 items-center h-screen flex-col">
+    <main className="flex min-h-screen flex-col items-center">
       <Header />
-      <section className="h-full max-w-screen-2xl w-full py-8">
+      <section className="flex h-full w-full max-w-screen-2xl flex-1 py-8">
         <Outlet />
       </section>
     </main>
