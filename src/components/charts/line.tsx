@@ -2,7 +2,7 @@ import { Chart as ChartJS, registerables, TooltipItem } from 'chart.js/auto'
 import { Line as LineChart } from 'react-chartjs-2'
 ChartJS.register(...registerables)
 
-export default function Line() {
+export default function PresentationChart() {
   return (
     <LineChart
       data={{

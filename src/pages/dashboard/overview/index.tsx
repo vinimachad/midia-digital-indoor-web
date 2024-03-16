@@ -1,4 +1,4 @@
-import Line from '@components/charts/line'
+import PresentationChart from '@components/charts/line'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 
@@ -13,8 +13,8 @@ export default function Overview() {
         </TabsList>
         <TabsContent value="statistics">
           <div className="grid min-h-full w-full grid-cols-1 grid-rows-2">
-            <div className="h-[450px]">
-              <Line />
+            <div className="h-[400px]">
+              <PresentationChart />
             </div>
             <div className="bg-slate-300"></div>
           </div>
