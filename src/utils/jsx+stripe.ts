@@ -1,9 +1,9 @@
-import React from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 declare global {
-  namespace React.JSX {
+  namespace JSX {
     interface IntrinsicElements {
-      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+      'stripe-pricing-table': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
     }
   }
 }
