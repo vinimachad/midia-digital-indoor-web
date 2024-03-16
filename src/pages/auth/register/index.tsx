@@ -1,4 +1,4 @@
-import Input from '@components/input/input'
+import Input from '@components/input'
 import { Button } from '@components/ui/button'
 import RegisterViewModel from './register-view-model'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
@@ -20,14 +20,14 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="overflow-x-hidden max-w-[100vw] bg-slate-100">
-      <div className="flex items-center justify-center w-full h-full min-h-screen">
+    <main className="max-w-[100vw] overflow-x-hidden bg-slate-100">
+      <div className="flex h-full min-h-screen w-full items-center justify-center">
         <div className="form-container">
           {buildAlertIfNeeded()}
           <div className="w-full content-start">
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
-          <form onSubmit={createAccountViewModel.handleSubmit} className="grid gap-4 w-full">
+          <form onSubmit={createAccountViewModel.handleSubmit} className="grid w-full gap-4">
             <Input
               name="full_name"
               type="text"
@@ -56,7 +56,7 @@ export default function RegisterPage() {
               onTextChange={createAccountViewModel.handleUpdatePassword}
               error={createAccountViewModel.findErrorByField('password')}
             />
-            <div className="flex items-center justify-end w-full">
+            <div className="flex w-full items-center justify-end">
               <Link to={'/login'} className="text-primary underline-offset-4 hover:underline">
                 Já tenho uma conta
               </Link>

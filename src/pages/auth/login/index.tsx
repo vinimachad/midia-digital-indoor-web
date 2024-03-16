@@ -1,7 +1,7 @@
 import LoginViewModel from './login-view-model'
 import { Button } from '@components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
-import Input from '@components/input/input'
+import Input from '@components/input'
 import { Link } from 'react-router-dom'
 
 export default function LoginPage() {
@@ -19,14 +19,14 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="overflow-x-hidden max-w-[100vw] bg-slate-100">
-      <div className="flex items-center justify-center w-full h-full min-h-screen">
+    <main className="max-w-[100vw] overflow-x-hidden bg-slate-100">
+      <div className="flex h-full min-h-screen w-full items-center justify-center">
         <div className="form-container">
           {buildAlertIfNeeded()}
           <div className="w-full content-start">
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
-          <form onSubmit={handleSubmit} className="grid gap-4 w-full">
+          <form onSubmit={handleSubmit} className="grid w-full gap-4">
             <Input
               name="email"
               placeholder="Email"
