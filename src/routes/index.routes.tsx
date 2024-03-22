@@ -7,11 +7,14 @@ import AuthLayout from './layouts/AuthLayout'
 import ProtectedRoute from './utils/protected'
 import SubscriptionOfferWrapper from '@components/wrappers/subscription-offer-wrapper'
 import Overview from '@pages/dashboard/overview'
+import SliderLayout from './layouts/SliderLayout'
 
 const routes = () => {
   return (
     <Route>
-      <Route path="/" element={<SlidePage />} />
+      <Route element={<SliderLayout />}>
+        <Route path="/" element={<SlidePage />} />
+      </Route>
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

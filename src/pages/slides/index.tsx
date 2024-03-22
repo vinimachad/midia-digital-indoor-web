@@ -1,10 +1,14 @@
-import SliderProvider from '../../hooks/context/slider-context'
-import SliderView from './slider-view'
+import Loading from '@components/loadings/slider-loading'
+import SliderViewModel from './slider-view-model'
 
-export default function SlidePage() {
+export default function SliderView() {
+  const { slides } = SliderViewModel()
+  if (slides.length <= 0) {
+    return <Loading />
+  }
   return (
-    <SliderProvider>
-      <SliderView />
-    </SliderProvider>
+    <div id="swiper" className="flex overflow-hidden">
+      {slides}
+    </div>
   )
 }
