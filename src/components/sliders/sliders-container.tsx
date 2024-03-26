@@ -4,6 +4,7 @@ import BannerSlideView from './banners/banner-slide-view'
 import { v4 as uuid } from 'uuid'
 import { CommercialSection } from '@type/slider/commercial-sections'
 import { useEffect, useState } from 'react'
+import { socket } from '@lib/socket-io'
 
 interface Props {
   items: CommercialSection.SectionItem[]
@@ -13,6 +14,8 @@ interface Props {
 export interface BaseSlideViewProps {
   isShowing: boolean
 }
+
+type CommercialData = { id: string; kind: string; title?: string; description?: string }
 
 export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
   let currentViewIndex = 0
@@ -28,7 +31,9 @@ export default function SlidersContainer({ items, onCompleteSectionSlide }: Prop
     currentViewIndex++
     setTimeout(() => {
       if (currentViewIndex <= items.length - 1) {
-        setCurrentDisplayViewId(items[currentViewIndex].data.id)
+        const currentItem = items[currentViewIndex]
+        socket.emit('update_current_commercial', createCurrentCommercialData(currentItem))
+        setCurrentDisplayViewId(currentItem.data.id)
         didStartSectionSlide()
       } else {
         onCompleteSectionSlide()
@@ -38,6 +43,27 @@ export default function SlidersContainer({ items, onCompleteSectionSlide }: Prop
 
   function isShowingView(id: string) {
     return id == currentDisplayViewId
+  }
+
+  function createCurrentCommercialData(item: CommercialSection.SectionItem) {
+    const data: CommercialData = {
+      id: item.data.id,
+      kind: item.kind
+    }
+    switch (item.kind) {
+      case 'NEWS':
+        data.description = item.data.url
+        data.title = item.data.title
+        break
+      case 'BANNER':
+        data.description = item.data.url
+        break
+      case 'WEATHER':
+        data.title = item.data.city_name
+        data.description = item.data.description
+        break
+    }
+    return data
   }
 
   // MARK: - Configure view
