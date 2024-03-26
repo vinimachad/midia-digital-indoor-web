@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
 import jpLogo from '../../../../assets/jp-logo.png'
-import { Slider } from '../../../types/slider'
+import { Slider } from '../../../types/slider/slider'
 
 export type Properties = {
   backgroundColor: string

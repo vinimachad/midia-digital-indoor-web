@@ -1,25 +1,61 @@
 import NewsSlideView from './news/news-slide-view'
 import WeatherSlideView from './weather/weather-slide-view'
 import BannerSlideView from './banners/banner-slide-view'
-import { ReactNode } from 'react'
 import { v4 as uuid } from 'uuid'
-import { Slider } from '../../types/slider'
+import { CommercialSection } from '@type/slider/commercial-sections'
+import { useEffect, useState } from 'react'
 
-export default function SlidersContainer(props: Slider.Commercial) {
-  function buildNewsSlide(): ReactNode | undefined {
-    if (props.news) return <NewsSlideView key={uuid()} {...props.news} />
+interface Props {
+  items: CommercialSection.SectionItem[]
+  onCompleteSectionSlide: () => void
+}
+
+export interface BaseSlideViewProps {
+  isShowing: boolean
+}
+
+export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
+  let currentViewIndex = 0
+  const [currentDisplayViewId, setCurrentDisplayViewId] = useState(items[0].data.id)
+
+  useEffect(() => {
+    didStartSectionSlide()
+  }, [])
+
+  // MARK: - Slide logic methods
+
+  function didStartSectionSlide() {
+    currentViewIndex++
+    setTimeout(() => {
+      if (currentViewIndex <= items.length - 1) {
+        setCurrentDisplayViewId(items[currentViewIndex].data.id)
+        didStartSectionSlide()
+      } else {
+        onCompleteSectionSlide()
+      }
+    }, 20 * 1000)
   }
 
-  function buildWeatherSlide() {
-    if (props.weather) return <WeatherSlideView key={uuid()} {...props.weather} />
+  function isShowingView(id: string) {
+    return id == currentDisplayViewId
   }
 
-  function buildBannersSlides() {
-    if (props.banners)
-      return props.banners.map((banner) => {
-        return <BannerSlideView key={uuid()} src={banner.url} />
-      })
+  // MARK: - Configure view
+
+  function createViews() {
+    const views = items.map((item) => {
+      switch (item.kind) {
+        case 'NEWS':
+          return <NewsSlideView key={uuid()} isShowing={isShowingView(item.data.id)} news={item.data} />
+        case 'WEATHER':
+          return <WeatherSlideView key={uuid()} isShowing={isShowingView(item.data.id)} weather={item.data} />
+        case 'BANNER':
+          return <BannerSlideView key={uuid()} isShowing={isShowingView(item.data.id)} src={item.data.url} />
+      }
+    })
+
+    return views
   }
 
-  return [buildNewsSlide(), buildWeatherSlide(), buildBannersSlides()]
+  return <article className="relative h-full w-full">{createViews()}</article>
 }

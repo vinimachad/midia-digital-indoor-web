@@ -1,6 +1,6 @@
 import ServiceRequest from '../services/api'
 import { APIResponse } from '../types/api'
-import { Slider } from '../types/slider'
+import { Slider } from '../types/slider/slider'
 
 const serviceRequest = ServiceRequest()
 
