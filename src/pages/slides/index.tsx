@@ -1,10 +1,12 @@
-import SliderProvider from '../../hooks/context/slider-context'
-import SliderView from './slider-view'
+import Loading from '@components/loadings/slider-loading'
+import SliderViewModel from './slider-view-model'
 
-export default function SlidePage() {
-  return (
-    <SliderProvider>
-      <SliderView />
-    </SliderProvider>
-  )
+export default function SliderView() {
+  const { section } = SliderViewModel()
+
+  if (!section) {
+    return <Loading />
+  }
+
+  return <div className="h-screen w-screen">{section}</div>
 }

@@ -1,16 +1,16 @@
-import { useEffect } from 'react'
-import { useSlider } from '@hooks/context/slider-context'
+import { useEffect, useState } from 'react'
 import commercial from '@models/commercial'
 import SlidersContainer from '@components/sliders/sliders-container'
-import { Slider } from '@type/slider'
+import { Slider } from '@type/slider/slider'
 
 export default function SliderViewModel() {
   // MARK: - Private properties
 
-  const maxLoopTimes = 10
+  const maxLoopTimes = 2
   let loopTimes = 0
   let commercialRes: Slider.CommercialPaginationResponse
-  const { addSlides, removeAllSlides, slides, startAutomaticSwipe, stopAutomaticSwipe } = useSlider()
+  let currentSectionIndex = 0
+  const [section, setSection] = useState<React.ReactNode | undefined>(undefined)
 
   // MARK: - Architecture properties
 
@@ -22,11 +22,6 @@ export default function SliderViewModel() {
 
   async function _start(page: number = 1, limit: number = 5) {
     await _handleGetCommercials(page, limit)
-    await _startSwipeLoop()
-  }
-
-  async function _startSwipeLoop() {
-    await startAutomaticSwipe(_handleOnSlideChange, _handleOnCompleteLoop)
   }
 
   async function _handleGetCommercials(page: number = 1, limit: number = 5) {
@@ -39,18 +34,34 @@ export default function SliderViewModel() {
     }
   }
 
-  async function _handleOnSlideChange() {}
-
   function _buildSliders() {
-    removeAllSlides()
-    commercialRes?.data.forEach((item, index) => {
-      addSlides(<SlidersContainer key={index} {...item} />)
-    })
+    _removeSection()
+    setSection(
+      <SlidersContainer
+        key={currentSectionIndex}
+        items={commercialRes.data[currentSectionIndex]}
+        onCompleteSectionSlide={async () => await _didCompleteSectionSlide()}
+      />
+    )
   }
 
-  // MARK: - On Complete loop logic methods
+  function _removeSection() {
+    setSection(undefined)
+  }
+
+  // MARK: - Loop logic methods
+
+  async function _didCompleteSectionSlide() {
+    _increaseCurrentSectionIndex()
+    if (currentSectionIndex <= commercialRes.data.length - 1) {
+      _buildSliders()
+    } else {
+      await _handleOnCompleteLoop()
+    }
+  }
 
   async function _handleOnCompleteLoop() {
+    _resetCurrentSectionIndex()
     _handleIncreaseLoopTimes()
     let next = { page: 1, limit: 5 }
     if (commercialRes?.next) {
@@ -60,15 +71,10 @@ export default function SliderViewModel() {
     await _handleRestartLoop(next.page, next.limit)
   }
 
-  async function _handleIncreaseLoopTimes() {
-    loopTimes++
-  }
-
   async function _handleRestartLoop(page: number = 1, limit: number = 5) {
-    removeAllSlides()
-    stopAutomaticSwipe()
+    _removeSection()
 
-    if (loopTimes < maxLoopTimes) {
+    if (loopTimes <= maxLoopTimes) {
       await _start(page, limit)
     } else {
       await _handleUpdateCommercialsAndRestart()
@@ -77,10 +83,21 @@ export default function SliderViewModel() {
 
   async function _handleUpdateCommercialsAndRestart() {
     loopTimes = 0
-    removeAllSlides()
-    stopAutomaticSwipe()
+    _removeSection()
     await commercial.updateCommercials()
     await _start()
+  }
+
+  function _handleIncreaseLoopTimes() {
+    loopTimes++
+  }
+
+  function _resetCurrentSectionIndex() {
+    currentSectionIndex = 0
+  }
+
+  function _increaseCurrentSectionIndex() {
+    currentSectionIndex++
   }
 
   // MARK: - API Request handlers
@@ -89,5 +106,5 @@ export default function SliderViewModel() {
     console.log(error)
   }
 
-  return { slides }
+  return { section }
 }
