@@ -1,10 +1,10 @@
 import loading from '../../../assets/Loading.png'
 export default function Loading() {
   return (
-    <div className="min-w-full min-h-screen flex items-center justify-center flex-col">
+    <div className="flex min-h-screen min-w-full flex-col items-center justify-center">
       <>
-        <h1 className="text-6xl font-bold text-center max-w-3xl mb-12">Estamos buscando por novas notícias</h1>
-        <img className=" w-52 object-contain animate-spin" src={loading} />
+        <h1 className="mb-12 max-w-3xl text-center text-6xl font-bold">Estamos buscando por novas notícias</h1>
+        <img className=" w-52 animate-spin object-contain" src={loading} />
       </>
     </div>
   )

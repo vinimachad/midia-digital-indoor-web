@@ -1,4 +1,5 @@
 import PresentationChart from '@components/charts/presentation-chart'
+import Dropzone from '@components/dropzone'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 
@@ -6,17 +7,21 @@ export default function Overview() {
   return (
     <section className="h-full w-full">
       <Header />
-      <Tabs defaultValue="statistics" className="my-3 h-full w-full">
+      <Tabs defaultValue="overview" className="my-3 h-full w-full">
         <TabsList>
-          <TabsTrigger value="statistics">Estatísticas</TabsTrigger>
+          <TabsTrigger value="overview">Visão geral</TabsTrigger>
           <TabsTrigger value="commercials">Propagandas</TabsTrigger>
         </TabsList>
-        <TabsContent value="statistics">
-          <div className="grid min-h-full w-full grid-cols-1 grid-rows-2">
-            <div className="h-[400px]">
+        <TabsContent value="overview">
+          <div className="grid w-full grid-cols-1 grid-rows-2 gap-y-8">
+            <div className="flex flex-grow gap-4">
+              <Dropzone status="toUpload" />
+              <Dropzone status="blocked" />
+              <Dropzone status="blocked" />
+            </div>
+            <div className="h-[333px]">
               <PresentationChart />
             </div>
-            <div className="bg-slate-300"></div>
           </div>
         </TabsContent>
         <TabsContent value="commercials">Change your password here.</TabsContent>

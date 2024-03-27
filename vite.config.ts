@@ -17,5 +17,10 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@routes': path.resolve(__dirname, './src/routes')
     }
+  },
+  css: {
+    modules: {
+      localsConvention: 'camelCase'
+    }
   }
 })
