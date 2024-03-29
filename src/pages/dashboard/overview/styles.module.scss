@@ -13,3 +13,7 @@
 .statistics-container {
   @apply flex h-[333px] flex-row gap-x-4;
 }
+
+.subtitle {
+  @apply text-xl font-semibold text-slate-800;
+}

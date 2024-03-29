@@ -5,17 +5,20 @@ import Dropzone from '@components/dropzone'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 import { twMerge } from 'tailwind-merge'
+import RealTimePreview from '@components/real-time-preview'
 
 export default function Overview() {
   return (
     <section className={styles.full}>
       <Header />
       <Tabs defaultValue="overview" className={twMerge(styles.full, 'my-3')}>
-        <TabsList>
+        <TabsList className="mb-8">
           <TabsTrigger value="overview">Visão geral</TabsTrigger>
           <TabsTrigger value="commercials">Propagandas</TabsTrigger>
         </TabsList>
+        <RealTimePreview />
         <TabsContent value="overview">
+          <h1 className={twMerge(styles.subtitle, 'mb-2')}>Suas propagandas</h1>
           <div className={styles.overviewGrid}>
             <div className={styles.dropzoneContainer}>
               <Dropzone status="toUpload" />

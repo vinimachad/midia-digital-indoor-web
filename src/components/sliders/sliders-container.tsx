@@ -4,7 +4,7 @@ import BannerSlideView from './banners/banner-slide-view'
 import { v4 as uuid } from 'uuid'
 import { CommercialSection } from '@type/slider/commercial-sections'
 import { useEffect, useState } from 'react'
-import { socket } from '@lib/socket-io'
+import { createSocket } from '@lib/socket-io'
 
 interface Props {
   items: CommercialSection.SectionItem[]
@@ -15,30 +15,50 @@ export interface BaseSlideViewProps {
   isShowing: boolean
 }
 
-type CommercialData = { id: string; kind: string; title?: string; description?: string }
+export type CommercialData = {
+  id: string
+  kind: string
+  title?: string
+  description?: string
+  preview?: string
+  updatedAt: string
+  durationInSeconds: number
+}
 
 export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
   let currentViewIndex = 0
+  const delayInSeconds = 10
+  const socket = createSocket()
   const [currentDisplayViewId, setCurrentDisplayViewId] = useState(items[0].data.id)
 
   useEffect(() => {
     didStartSectionSlide()
+    return () => {
+      socket.disconnect()
+    }
   }, [])
 
   // MARK: - Slide logic methods
 
-  function didStartSectionSlide() {
+  async function didStartSectionSlide() {
+    const currentItem = items[currentViewIndex]
+    setCurrentDisplayViewId(currentItem.data.id)
+    emitUpdateCurrentCommercial()
     currentViewIndex++
-    setTimeout(() => {
-      if (currentViewIndex <= items.length - 1) {
-        const currentItem = items[currentViewIndex]
-        socket.emit('update_current_commercial', createCurrentCommercialData(currentItem))
-        setCurrentDisplayViewId(currentItem.data.id)
-        didStartSectionSlide()
-      } else {
-        onCompleteSectionSlide()
-      }
-    }, 20 * 1000)
+    if (currentViewIndex <= items.length - 1) {
+      wait(delayInSeconds, didStartSectionSlide)
+    } else {
+      wait(delayInSeconds, onCompleteSectionSlide)
+    }
+  }
+
+  async function wait(seconds: number, cb: () => void) {
+    const oneSecondInMilliseconds = 1000
+    setTimeout(cb, seconds * oneSecondInMilliseconds)
+  }
+
+  function emitUpdateCurrentCommercial() {
+    socket.emit('update_current_commercial', createCurrentCommercialData(items[currentViewIndex]))
   }
 
   function isShowingView(id: string) {
@@ -48,19 +68,24 @@ export default function SlidersContainer({ items, onCompleteSectionSlide }: Prop
   function createCurrentCommercialData(item: CommercialSection.SectionItem) {
     const data: CommercialData = {
       id: item.data.id,
-      kind: item.kind
+      kind: item.kind,
+      updatedAt: new Date().toLocaleString(),
+      durationInSeconds: delayInSeconds
     }
+
     switch (item.kind) {
       case 'NEWS':
-        data.description = item.data.url
         data.title = item.data.title
+        data.description = 'Acesse a noticia para mais detalhes'
+        data.preview = item.data.url
         break
       case 'BANNER':
-        data.description = item.data.url
+        data.preview = item.data.url
         break
       case 'WEATHER':
-        data.title = item.data.city_name
-        data.description = item.data.description
+        data.title = `Clima da cidade: ${item.data.city_name}`
+        data.description = `${item.data.temp} e ${item.data.description}`
+        data.preview = item.data.condition_slug
         break
     }
     return data
