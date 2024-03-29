@@ -3,13 +3,14 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { createSocket } from '@lib/socket-io'
 import linkModel from '@models/link-model'
 import { useEffect, useState } from 'react'
+import { Socket } from 'socket.io-client'
 
 export default function RealTimePreview() {
-  const socket = createSocket()
   const [data, setData] = useState<CommercialData | null>()
   const noInformationLabel = 'Sem informação'
 
   useEffect(() => {
+    const socket: Socket = createSocket()
     socket.on('receive_updated_commercial', (data) => {
       if (data.kind === 'NEWS') {
         handleMetadata(data)
@@ -73,7 +74,6 @@ export default function RealTimePreview() {
               </TableCell>
               <TableCell>{data.durationInSeconds} Segundos</TableCell>
               <TableCell>{data.updatedAt}</TableCell>
-              {/*  28/03/2024 - 29:47:33 */}
             </TableRow>
           </TableBody>
         </Table>

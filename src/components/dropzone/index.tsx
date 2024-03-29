@@ -18,8 +18,8 @@ const variants = tv({
 interface Props extends VariantProps<typeof variants> {}
 
 export default function DropZone({ status }: Props) {
-  const onDrop = useCallback((acceptedFiles) => {}, [])
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+  const onDrop = useCallback(() => {}, [])
+  const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
   return (
     <button className={variants({ status })} {...getRootProps()} disabled={status === 'blocked'}>

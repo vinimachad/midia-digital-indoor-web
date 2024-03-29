@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid'
 import { CommercialSection } from '@type/slider/commercial-sections'
 import { useEffect, useState } from 'react'
 import { createSocket } from '@lib/socket-io'
+import { Socket } from 'socket.io-client'
 
 interface Props {
   items: CommercialSection.SectionItem[]
@@ -27,14 +28,15 @@ export type CommercialData = {
 
 export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
   let currentViewIndex = 0
-  const delayInSeconds = 10
-  const socket = createSocket()
+  let socket: Socket | null = null
+  const delayInSeconds = 2
   const [currentDisplayViewId, setCurrentDisplayViewId] = useState(items[0].data.id)
 
   useEffect(() => {
+    socket = createSocket()
     didStartSectionSlide()
     return () => {
-      socket.disconnect()
+      socket?.disconnect()
     }
   }, [])
 
@@ -58,7 +60,7 @@ export default function SlidersContainer({ items, onCompleteSectionSlide }: Prop
   }
 
   function emitUpdateCurrentCommercial() {
-    socket.emit('update_current_commercial', createCurrentCommercialData(items[currentViewIndex]))
+    socket?.emit('update_current_commercial', createCurrentCommercialData(items[currentViewIndex]))
   }
 
   function isShowingView(id: string) {

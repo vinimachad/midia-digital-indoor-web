@@ -1,14 +1,14 @@
 import { twMerge } from 'tailwind-merge'
 import styles from './styles.module.scss'
 
-interface DetailedCardProps {}
+// interface DetailedCardProps {}
 
 interface DetailLineProps {
   title: string
   value: string
 }
 
-export default function DetailedCard(props: DetailedCardProps) {
+export default function DetailedCard() {
   return (
     <div className={styles.card}>
       <h1 className={styles.title}>Total de propagandas:</h1>
