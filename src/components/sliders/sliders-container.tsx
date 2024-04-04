@@ -4,6 +4,8 @@ import BannerSlideView from './banners/banner-slide-view'
 import { v4 as uuid } from 'uuid'
 import { CommercialSection } from '@type/slider/commercial-sections'
 import { useEffect, useState } from 'react'
+import { createSocket } from '@lib/socket-io'
+import { Socket } from 'socket.io-client'
 
 interface Props {
   items: CommercialSection.SectionItem[]
@@ -14,30 +16,81 @@ export interface BaseSlideViewProps {
   isShowing: boolean
 }
 
+export type CommercialData = {
+  id: string
+  kind: string
+  title?: string
+  description?: string
+  preview?: string
+  updatedAt: string
+  durationInSeconds: number
+}
+
 export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
   let currentViewIndex = 0
+  let socket: Socket | null = null
+  const delayInSeconds = 20
   const [currentDisplayViewId, setCurrentDisplayViewId] = useState(items[0].data.id)
 
   useEffect(() => {
+    socket = createSocket()
     didStartSectionSlide()
+    return () => {
+      socket?.disconnect()
+    }
   }, [])
 
   // MARK: - Slide logic methods
 
-  function didStartSectionSlide() {
+  async function didStartSectionSlide() {
+    const currentItem = items[currentViewIndex]
+    setCurrentDisplayViewId(currentItem.data.id)
+    emitUpdateCurrentCommercial()
     currentViewIndex++
-    setTimeout(() => {
-      if (currentViewIndex <= items.length - 1) {
-        setCurrentDisplayViewId(items[currentViewIndex].data.id)
-        didStartSectionSlide()
-      } else {
-        onCompleteSectionSlide()
-      }
-    }, 20 * 1000)
+    if (currentViewIndex <= items.length - 1) {
+      wait(delayInSeconds, didStartSectionSlide)
+    } else {
+      wait(delayInSeconds, onCompleteSectionSlide)
+    }
+  }
+
+  async function wait(seconds: number, cb: () => void) {
+    const oneSecondInMilliseconds = 1000
+    setTimeout(cb, seconds * oneSecondInMilliseconds)
+  }
+
+  function emitUpdateCurrentCommercial() {
+    socket?.emit('update_current_commercial', createCurrentCommercialData(items[currentViewIndex]))
   }
 
   function isShowingView(id: string) {
     return id == currentDisplayViewId
+  }
+
+  function createCurrentCommercialData(item: CommercialSection.SectionItem) {
+    const data: CommercialData = {
+      id: item.data.id,
+      kind: item.kind,
+      updatedAt: new Date().toLocaleString(),
+      durationInSeconds: delayInSeconds
+    }
+
+    switch (item.kind) {
+      case 'NEWS':
+        data.title = item.data.title
+        data.description = 'Acesse a noticia para mais detalhes'
+        data.preview = item.data.url
+        break
+      case 'BANNER':
+        data.preview = item.data.url
+        break
+      case 'WEATHER':
+        data.title = `Clima da cidade: ${item.data.city_name}`
+        data.description = `${item.data.temp} e ${item.data.description}`
+        data.preview = item.data.condition_slug
+        break
+    }
+    return data
   }
 
   // MARK: - Configure view

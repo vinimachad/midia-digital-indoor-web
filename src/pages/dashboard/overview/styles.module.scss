@@ -1,0 +1,19 @@
+.full {
+  @apply h-full w-full;
+}
+
+.overview-grid {
+  @apply grid w-full grid-cols-1 grid-rows-2 gap-y-8;
+}
+
+.dropzone-container {
+  @apply flex gap-4;
+}
+
+.statistics-container {
+  @apply flex h-[333px] flex-row gap-x-4;
+}
+
+.subtitle {
+  @apply text-xl font-semibold text-slate-800;
+}

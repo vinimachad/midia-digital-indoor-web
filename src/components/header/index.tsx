@@ -42,7 +42,7 @@ export default function Header() {
             <li>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Avatar>
+                  <Avatar className="cursor-pointer">
                     <AvatarFallback>{getUserInitials()}</AvatarFallback>
                   </Avatar>
                 </PopoverTrigger>
@@ -50,20 +50,20 @@ export default function Header() {
                   <Command>
                     <CommandList>
                       <CommandGroup>
-                        <CommandItem className="gap-x-2">
+                        <CommandItem>
                           <UserIcon size={18} />
                           <span>Perfil</span>
                         </CommandItem>
-                        <CommandItem className="gap-x-2">
+                        <CommandItem>
                           <ConfigIcon size={18} />
                           <span>Configurações</span>
                         </CommandItem>
-                        <CommandItem className="gap-x-2">
+                        <CommandItem>
                           <CreditCardIcon size={18} />
                           <span>Ver meu plano</span>
                         </CommandItem>
                         <CommandSeparator />
-                        <CommandItem onSelect={() => setOpenDialog(true)} className="gap-x-2">
+                        <CommandItem onSelect={() => setOpenDialog(true)}>
                           <LogOutIcon size={18} />
                           <span>Sair</span>
                         </CommandItem>

@@ -19,6 +19,7 @@ export namespace Slider {
     image_url: string
     delay: number
     qrcode: string
+    url: string
   }
 
   export type Weather = {

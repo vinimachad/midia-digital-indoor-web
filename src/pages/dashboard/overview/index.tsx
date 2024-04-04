@@ -1,22 +1,34 @@
+import DetailedCard from '@components/cards/detailed-card'
+import styles from './styles.module.scss'
 import PresentationChart from '@components/charts/presentation-chart'
+import Dropzone from '@components/dropzone'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
+import { twMerge } from 'tailwind-merge'
+import RealTimePreview from '@components/real-time-preview'
 
 export default function Overview() {
   return (
-    <section className="h-full w-full">
+    <section className={styles.full}>
       <Header />
-      <Tabs defaultValue="statistics" className="my-3 h-full w-full">
-        <TabsList>
-          <TabsTrigger value="statistics">Estatísticas</TabsTrigger>
+      <Tabs defaultValue="overview" className={twMerge(styles.full, 'my-3')}>
+        <TabsList className="mb-8">
+          <TabsTrigger value="overview">Visão geral</TabsTrigger>
           <TabsTrigger value="commercials">Propagandas</TabsTrigger>
         </TabsList>
-        <TabsContent value="statistics">
-          <div className="grid min-h-full w-full grid-cols-1 grid-rows-2">
-            <div className="h-[400px]">
-              <PresentationChart />
+        <RealTimePreview />
+        <TabsContent value="overview">
+          <h1 className={twMerge(styles.subtitle, 'mb-2')}>Suas propagandas</h1>
+          <div className={styles.overviewGrid}>
+            <div className={styles.dropzoneContainer}>
+              <Dropzone status="toUpload" />
+              <Dropzone status="blocked" />
+              <Dropzone status="blocked" />
             </div>
-            <div className="bg-slate-300"></div>
+            <div className={styles.statisticsContainer}>
+              <PresentationChart />
+              <DetailedCard />
+            </div>
           </div>
         </TabsContent>
         <TabsContent value="commercials">Change your password here.</TabsContent>
