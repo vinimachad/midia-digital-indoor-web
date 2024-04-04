@@ -29,7 +29,7 @@ export type CommercialData = {
 export default function SlidersContainer({ items, onCompleteSectionSlide }: Props) {
   let currentViewIndex = 0
   let socket: Socket | null = null
-  const delayInSeconds = 2
+  const delayInSeconds = 20
   const [currentDisplayViewId, setCurrentDisplayViewId] = useState(items[0].data.id)
 
   useEffect(() => {
