@@ -1,34 +1,30 @@
-
 $w-sm: 640px;
 $w-md: 768px;
 $w-lg: 1024px;
 $w-xl: 1280px;
 
 .title-label {
-    @apply text-xl md:text-2xl font-bold leading-5 md:leading-6
+  @apply text-xl font-bold leading-5 md:text-2xl md:leading-6;
 }
 
 .form-container {
-    @apply flex flex-col items-center justify-center min-w-[500px] bg-white p-8 gap-4;
-    border-radius: 12px;
+  @apply flex min-w-[500px] flex-col items-center justify-center gap-4 bg-white p-8;
+  border-radius: 12px;
 
-    @media (width <= $w-sm) {
-        @apply h-screen w-screen border-r-0 min-w-full
-    }
+  @media (width <= $w-sm) {
+    @apply h-screen w-screen min-w-full border-r-0;
+  }
 }
 
 .input {
-    @apply w-full h-14 w-full p-3 outline-none;    
-    border-width: 1px;
-    border-radius: 8px;
-    border-color: rgba(188, 200, 214, 1);
+  @apply h-14 w-full rounded-lg border border-slate-300 p-3 outline-none;
 }
 
 .destructive-input {
-    @apply border-destructive/50 text-destructive dark:border-destructive placeholder-destructive [&>svg]:text-destructive outline-none;
-    border-width: 3px;
+  @apply border-destructive/50 text-destructive placeholder-destructive outline-none dark:border-destructive [&>svg]:text-destructive;
+  border-width: 3px;
 }
 
 .supporting-text {
-    @apply text-sm;
+  @apply text-sm;
 }

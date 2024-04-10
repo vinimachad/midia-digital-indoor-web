@@ -1,7 +1,7 @@
 import LoginViewModel from './login-view-model'
 import { Button } from '@components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
-import Input from '@components/input'
+import Input from '@components/input/input'
 import { Link } from 'react-router-dom'
 
 export default function LoginPage() {

@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback } from '@components/ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { Skeleton } from '@components/ui/skeleton'
 import { UserIcon, CogIcon as ConfigIcon, CreditCardIcon, LogOutIcon } from 'lucide-react'
-import DropOutDialog from '@components/drop-out-dialog'
+import DropOutDialog from '@components/dialogs/drop-out-dialog'
 
 export default function Header() {
   const { path, paths, email, getUserInitials, getUserName, userIsLoading, logout, openDialog, setOpenDialog } =

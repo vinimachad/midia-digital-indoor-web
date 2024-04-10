@@ -3,6 +3,29 @@ import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 
 import { cn } from '@lib/shadcn'
 import { buttonVariants } from '@components/ui/button'
+import { VariantProps, cva } from 'class-variance-authority'
+
+const alertDialogDescriptionVariation = cva('', {
+  variants: {
+    variant: {
+      default: 'text-muted-foreground',
+      warn: 'text-amber-600'
+    },
+    size: {
+      sm: 'text-sm',
+      md: 'text-md',
+      lg: 'text-lg'
+    }
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'sm'
+  }
+})
+
+interface AlertDialogDescriptionProps
+  extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>,
+    VariantProps<typeof alertDialogDescriptionVariation> {}
 
 const AlertDialog = AlertDialogPrimitive.Root
 
@@ -63,9 +86,13 @@ AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 
 const AlertDialogDescription = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Description ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
+  AlertDialogDescriptionProps
+>(({ className, variant, size, ...props }, ref) => (
+  <AlertDialogPrimitive.Description
+    ref={ref}
+    className={cn(alertDialogDescriptionVariation({ variant, size }), className)}
+    {...props}
+  />
 ))
 AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName
 

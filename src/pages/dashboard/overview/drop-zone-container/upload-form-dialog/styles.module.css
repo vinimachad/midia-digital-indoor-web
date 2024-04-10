@@ -1,0 +1,7 @@
+form {
+  @apply grid auto-rows-auto gap-y-4;
+
+  .upload-preview {
+    @apply h-full w-full rounded-lg border border-slate-300 object-contain;
+  }
+}

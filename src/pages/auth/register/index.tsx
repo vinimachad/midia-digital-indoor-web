@@ -1,4 +1,4 @@
-import Input from '@components/input'
+import Input from '@components/input/input'
 import { Button } from '@components/ui/button'
 import RegisterViewModel from './register-view-model'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'

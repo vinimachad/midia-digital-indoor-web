@@ -9,3 +9,11 @@
 .text {
   @apply max-w-[50%] text-center text-base font-semibold;
 }
+
+.on-focus {
+  @apply border-emerald-400 text-emerald-400;
+}
+
+.failed {
+  @apply border-rose-500 text-rose-500;
+}

@@ -28,7 +28,6 @@ interface Props {
 }
 
 export default function DropOutDialog({ configs, openDialog }: Props) {
-  console.log(openDialog)
   return (
     <AlertDialog open={openDialog}>
       <AlertDialogContent>

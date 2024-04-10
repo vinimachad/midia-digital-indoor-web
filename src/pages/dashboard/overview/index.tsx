@@ -1,11 +1,11 @@
 import DetailedCard from '@components/cards/detailed-card'
 import styles from './styles.module.scss'
 import PresentationChart from '@components/charts/presentation-chart'
-import Dropzone from '@components/dropzone'
 import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 import { twMerge } from 'tailwind-merge'
 import RealTimePreview from '@components/real-time-preview'
+import DropZoneContainer from './drop-zone-container'
 
 export default function Overview() {
   return (
@@ -20,11 +20,7 @@ export default function Overview() {
         <TabsContent value="overview">
           <h1 className={twMerge(styles.subtitle, 'mb-2')}>Suas propagandas</h1>
           <div className={styles.overviewGrid}>
-            <div className={styles.dropzoneContainer}>
-              <Dropzone status="toUpload" />
-              <Dropzone status="blocked" />
-              <Dropzone status="blocked" />
-            </div>
+            <DropZoneContainer />
             <div className={styles.statisticsContainer}>
               <PresentationChart />
               <DetailedCard />
