@@ -1,11 +1,11 @@
 import DetailedCard from '@components/cards/detailed-card'
 import styles from './styles.module.scss'
 import PresentationChart from '@components/charts/presentation-chart'
-import { Button } from '@components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 import { twMerge } from 'tailwind-merge'
 import RealTimePreview from '@components/real-time-preview'
 import DropZoneContainer from './drop-zone-container'
+import Header from './header'
 
 export default function Overview() {
   return (
@@ -18,7 +18,7 @@ export default function Overview() {
         </TabsList>
         <RealTimePreview />
         <TabsContent value="overview">
-          <h1 className={twMerge(styles.subtitle, 'mb-2')}>Suas propagandas</h1>
+          <h4 className={twMerge('highlight', 'mb-2')}>Suas propagandas</h4>
           <div className={styles.overviewGrid}>
             <DropZoneContainer />
             <div className={styles.statisticsContainer}>
@@ -30,14 +30,5 @@ export default function Overview() {
         <TabsContent value="commercials">Change your password here.</TabsContent>
       </Tabs>
     </section>
-  )
-}
-
-function Header() {
-  return (
-    <div className="flex flex-1 justify-between">
-      <h1 className="text-4xl font-semibold text-slate-900">Mídia Digital Indoor</h1>
-      <Button>Adicionar propaganda</Button>
-    </div>
   )
 }

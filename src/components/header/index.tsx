@@ -16,12 +16,12 @@ export default function Header() {
         <ul className="flex h-full flex-row items-center gap-4">
           <li>
             <NavigationButton selected={path == paths.overview} href={paths.overview}>
-              Visão geral
+              <span className="body">Visão geral</span>
             </NavigationButton>
           </li>
           <li>
             <NavigationButton selected={path == paths.config} href={paths.config}>
-              Configurações
+              <span className="body">Configurações</span>
             </NavigationButton>
           </li>
         </ul>
@@ -36,8 +36,8 @@ export default function Header() {
         ) : (
           <ul className="flex h-full flex-row items-center justify-end gap-4">
             <li className="flex flex-col items-end justify-end">
-              <h3 className="text-sm text-slate-800">{getUserName()} </h3>
-              <h6 className="text-sm text-slate-800">{email}</h6>
+              <span className="body text-slate-800">{getUserName()} </span>
+              <span className="body text-slate-800">{email}</span>
             </li>
             <li>
               <Popover>

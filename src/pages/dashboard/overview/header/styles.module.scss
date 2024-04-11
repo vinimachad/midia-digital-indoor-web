@@ -1,0 +1,8 @@
+/* The component style is inserted here. */
+.container {
+  @apply flex flex-1 justify-between;
+}
+
+.title {
+  @apply text-4xl font-semibold text-slate-900;
+}

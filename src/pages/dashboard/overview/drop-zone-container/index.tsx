@@ -6,6 +6,7 @@ import UploadFormDialog from './upload-form-dialog'
 export default function DropZoneContainer() {
   const [openDialog, setOpenDialog] = useState(false)
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+
   return (
     <>
       <div className={styles.dropzoneContainer}>

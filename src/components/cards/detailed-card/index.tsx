@@ -11,13 +11,13 @@ interface DetailLineProps {
 export default function DetailedCard() {
   return (
     <div className={styles.card}>
-      <h1 className={styles.title}>Total de propagandas:</h1>
-      <span className={styles.emphasis}>1</span>
+      <span className="body highlight">Total de propagandas:</span>
+      <h4 className="highlight">1</h4>
       <div className={twMerge(styles.separator, 'my-2')} />
       <div className={styles.col}>
-        <div>
-          <h2 className={styles.subtitle}>Resumo</h2>
-          <span className={styles.description}>Últimos 30 dias</span>
+        <div className="flex flex-col">
+          <span className="body highlight">Resumo</span>
+          <span className="small text-slate-600">Últimos 30 dias</span>
         </div>
         <div className={styles.col}>
           <DetailLine title="Tempo de exibição (horas)" value="14h" />
@@ -31,9 +31,9 @@ export default function DetailedCard() {
 export function DetailLine({ title, value }: DetailLineProps) {
   return (
     <div className={styles.detailLine}>
-      <h1>{title}</h1>
+      <span className="body">{title}</span>
       <div className={twMerge(styles.separator, 'flex-1 border-dashed')} />
-      <span>{value} -</span>
+      <span className="body">{value} -</span>
     </div>
   )
 }

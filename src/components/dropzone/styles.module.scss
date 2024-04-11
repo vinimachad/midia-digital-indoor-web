@@ -1,3 +1,5 @@
+@import '../../styles/design-system/font';
+
 .base-status {
   @apply flex h-full flex-1 cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-200 bg-white text-sm;
 }
@@ -7,7 +9,7 @@
 }
 
 .text {
-  @apply max-w-[50%] text-center text-base font-semibold;
+  @apply body max-w-[50%] text-center font-semibold;
 }
 
 .on-focus {
