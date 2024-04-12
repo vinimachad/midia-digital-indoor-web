@@ -3,6 +3,7 @@ import { Button } from '@components/ui/button'
 import RegisterViewModel from './register-view-model'
 import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert'
 import { Link } from 'react-router-dom'
+import { maskToPhoneNumber } from '@components/input/input/masks'
 
 export default function RegisterPage() {
   const createAccountViewModel = RegisterViewModel()
@@ -32,29 +33,34 @@ export default function RegisterPage() {
               name="full_name"
               type="text"
               placeholder="Nome Completo"
-              onTextChange={createAccountViewModel.handleUpdateFullName}
-              error={createAccountViewModel.findErrorByField('full_name')}
+              register={createAccountViewModel.register}
+              error={createAccountViewModel.errors.full_name}
             />
             <Input
-              mask="phone"
               name="phone_number"
               placeholder="Celular com DDD"
-              onTextChange={createAccountViewModel.handleUpdatePhoneNumber}
-              error={createAccountViewModel.findErrorByField('phone_number')}
+              register={createAccountViewModel.register}
+              error={createAccountViewModel.errors.phone_number}
+              options={{
+                required: true,
+                onChange: (event) => {
+                  createAccountViewModel.setValue('phone_number', maskToPhoneNumber(event.target.value))
+                }
+              }}
             />
             <Input
               name="email"
               placeholder="Email"
-              onTextChange={createAccountViewModel.handleUpdateEmail}
-              error={createAccountViewModel.findErrorByField('email')}
+              register={createAccountViewModel.register}
+              error={createAccountViewModel.errors.email}
             />
             <Input
               name="password"
               type="password"
               placeholder="Senha"
               supportingText="Crie uma senha entre 8 e 16 digitos"
-              onTextChange={createAccountViewModel.handleUpdatePassword}
-              error={createAccountViewModel.findErrorByField('password')}
+              register={createAccountViewModel.register}
+              error={createAccountViewModel.errors.password}
             />
             <div className="flex w-full items-center justify-end">
               <Link to={'/login'} className="text-primary underline-offset-4 hover:underline">

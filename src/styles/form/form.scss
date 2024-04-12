@@ -18,11 +18,15 @@ $w-xl: 1280px;
 
 .input {
   @apply h-14 w-full rounded-lg border border-slate-300 p-3 outline-none;
-}
+  &.error {
+    @apply border-destructive/50 text-destructive placeholder-destructive outline-none dark:border-destructive [&>svg]:text-destructive;
+    border-width: 3px;
+  }
 
-.destructive-input {
-  @apply border-destructive/50 text-destructive placeholder-destructive outline-none dark:border-destructive [&>svg]:text-destructive;
-  border-width: 3px;
+  &:hover,
+  &:focus {
+    @apply border-slate-500 placeholder-slate-500;
+  }
 }
 
 .supporting-text {

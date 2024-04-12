@@ -32,8 +32,6 @@ async function refreshToken(): Promise<APIResponse<User.RefreshToken.Response>> 
 }
 
 async function removeCookies() {
-  // cookies.accessToken.delete()
-  // cookies.refreshToken.delete()
   cookies.all.delete()
 }
 

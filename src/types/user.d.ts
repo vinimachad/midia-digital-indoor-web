@@ -20,7 +20,7 @@ export namespace User {
   }
 
   export namespace CreateAccount {
-    export type Request = Infos & { password: string }
+    export type Request = Omit<Infos, 'subscription'> & { password: string }
     export type Response = Infos & { access_token: string; refresh_token: string }
   }
 

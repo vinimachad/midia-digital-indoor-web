@@ -5,7 +5,7 @@ import Input from '@components/input/input'
 import { Link } from 'react-router-dom'
 
 export default function LoginPage() {
-  const { handleSubmit, alert, findErrorByField, handleUpdate, isLoading } = LoginViewModel()
+  const { alert, isLoading, errors, register, handleSubmit } = LoginViewModel()
 
   function buildAlertIfNeeded() {
     if (alert && alert.show) {
@@ -27,19 +27,8 @@ export default function LoginPage() {
             <h2 className="title-label">Preencha seus dados:</h2>
           </div>
           <form onSubmit={handleSubmit} className="grid w-full gap-4">
-            <Input
-              name="email"
-              placeholder="Email"
-              error={findErrorByField('email')}
-              onTextChange={() => handleUpdate('email')}
-            />
-            <Input
-              name="password"
-              type="password"
-              placeholder="Senha"
-              error={findErrorByField('password')}
-              onTextChange={() => handleUpdate('password')}
-            />
+            <Input name="email" placeholder="Email" register={register} error={errors.email} />
+            <Input name="password" type="password" placeholder="Senha" register={register} error={errors.password} />
             <div className="flex flex-1 justify-between">
               <Link to={'/register'} className="text-primary underline-offset-4 hover:underline">
                 Criar minha conta
