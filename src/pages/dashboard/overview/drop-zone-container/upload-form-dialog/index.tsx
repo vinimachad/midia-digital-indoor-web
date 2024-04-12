@@ -18,8 +18,8 @@ import Input from '@components/input/input'
 
 const required_error = 'Este campo é obrigatório'
 const inputSchema = z.object({
-  title: z.string({ required_error }),
-  description: z.string({ required_error })
+  title: z.string().min(1, required_error),
+  description: z.string().min(1, required_error)
 })
 
 type Inputs = z.infer<typeof inputSchema>
@@ -32,6 +32,7 @@ interface Props {
 
 export default function UploadFormDialog({ openDialog, onCloseDialog, file }: Props) {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors }
@@ -39,7 +40,13 @@ export default function UploadFormDialog({ openDialog, onCloseDialog, file }: Pr
   const previewUrl = file ? URL.createObjectURL(file) : null
 
   function didSubmit(data: Inputs) {
+    reset()
     console.log(data)
+  }
+
+  function didClose() {
+    reset()
+    onCloseDialog()
   }
 
   return (
@@ -56,17 +63,21 @@ export default function UploadFormDialog({ openDialog, onCloseDialog, file }: Pr
           </AlertDialogDescription>
         </AlertDialogHeader>
         <form onSubmit={handleSubmit(didSubmit)}>
-          <Input name="title" placeholder="Título" className="input" register={register} />
-          <textarea className="input" {...register('description')} />
-          <p>{errors.description?.message}</p>
-          {/* <TextArea onTextChange={() => {}} placeholder="Descrição" {...register('description')} /> */}
+          <Input name="title" placeholder="Título" error={errors.title} register={register} />
+          <TextArea
+            className="h-20"
+            name="description"
+            placeholder="Descrição"
+            error={errors.description}
+            register={register}
+          />
           {previewUrl && (
             <AspectRatio ratio={16 / 9}>
               <img src={previewUrl} className={styles.uploadPreview} />
             </AspectRatio>
           )}
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={onCloseDialog}>{'Cancelar upload'}</AlertDialogCancel>
+            <AlertDialogCancel onClick={didClose}>{'Cancelar upload'}</AlertDialogCancel>
             <AlertDialogAction type="submit">Enviar para análise</AlertDialogAction>
           </AlertDialogFooter>
         </form>

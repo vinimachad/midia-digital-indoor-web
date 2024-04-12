@@ -1,23 +1,46 @@
-import { SupportingText, SupportingTextConfig } from '../input/supporting-text'
-import React from 'react'
 import './styles.module.scss'
+import React from 'react'
+import { tv } from 'tailwind-variants'
+import { FieldError, FieldValues, Path, RegisterOptions, UseFormRegister } from 'react-hook-form'
+import { SupportingText, SupportingTextConfig } from '../input/supporting-text'
 
-interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
+interface TextAreaProps<T extends FieldValues> extends React.InputHTMLAttributes<HTMLTextAreaElement> {
+  name: Path<T>
+  error?: FieldError
+  options?: RegisterOptions
   supportingTextConfig?: SupportingTextConfig
-  onTextChange: (value: string) => void
+  register: UseFormRegister<T>
 }
 
-export default function TextArea({ supportingTextConfig, onTextChange, ...textareaProps }: TextAreaProps) {
-  // MARK: - Actions
-
-  function handleChange({ target: { value } }: React.ChangeEvent<HTMLTextAreaElement>) {
-    onTextChange(value)
+const textareaVariant = tv({
+  base: 'input',
+  variants: {
+    error: {
+      true: 'error'
+    }
   }
+})
 
+export default function TextArea<T extends FieldValues>({
+  error,
+  name,
+  options,
+  className,
+  supportingTextConfig,
+  register,
+  ...textareaProps
+}: TextAreaProps<T>) {
+  const hasError = error != undefined
   return (
     <div className="flex flex-col justify-start gap-y-1">
-      <textarea onChange={handleChange} {...textareaProps} />
-      <SupportingText theme={supportingTextConfig?.theme ?? 'default'}>{supportingTextConfig?.message}</SupportingText>
+      <textarea
+        className={textareaVariant({ error: hasError, className })}
+        {...textareaProps}
+        {...register(name, options)}
+      />
+      <SupportingText theme={hasError ? 'destructive' : 'default'}>
+        {hasError ? error?.message : supportingTextConfig?.message}
+      </SupportingText>
     </div>
   )
 }
