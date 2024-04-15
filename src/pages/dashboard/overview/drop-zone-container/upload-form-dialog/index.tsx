@@ -23,14 +23,15 @@ const inputSchema = z.object({
 })
 
 type Inputs = z.infer<typeof inputSchema>
-
+export type UploadRequest = Inputs & { file: File }
 interface Props {
   openDialog: boolean
+  onSubmit: (data: UploadRequest) => Promise<void>
   onCloseDialog: () => void
   file: File | null
 }
 
-export default function UploadFormDialog({ openDialog, onCloseDialog, file }: Props) {
+export default function UploadFormDialog({ file, openDialog, onCloseDialog, onSubmit }: Props) {
   const {
     reset,
     register,
@@ -39,9 +40,11 @@ export default function UploadFormDialog({ openDialog, onCloseDialog, file }: Pr
   } = useForm<Inputs>({ resolver: zodResolver(inputSchema) })
   const previewUrl = file ? URL.createObjectURL(file) : null
 
-  function didSubmit(data: Inputs) {
+  async function didSubmit(data: Inputs) {
+    if (!file) return
     reset()
-    console.log(data)
+    await onSubmit({ ...data, file: file })
+    onCloseDialog()
   }
 
   function didClose() {

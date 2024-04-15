@@ -12,7 +12,8 @@ const dropzoneVariants = tv({
       toUpload: styles.toUpload,
       blocked: styles.blocked,
       failed: styles.failed,
-      onFocus: styles.onFocus
+      onFocus: styles.onFocus,
+      pendingAnalysis: styles.pendingAnalysis
     }
   }
 })

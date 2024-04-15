@@ -2,7 +2,7 @@ import cookies from '@lib/cookies'
 import ServiceRequest from '@services/api'
 import { APIResponse } from '@type/api'
 import { AppErrorTypes } from '@type/app-error'
-import { User } from '@type/user'
+import { User } from '@type/user/user'
 
 const serviceRequest = ServiceRequest()
 

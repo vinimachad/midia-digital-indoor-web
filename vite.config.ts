@@ -5,22 +5,53 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@services': path.resolve(__dirname, './src/services'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@models': path.resolve(__dirname, './src/models'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@type': path.resolve(__dirname, './src/types'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@routes': path.resolve(__dirname, './src/routes')
-    }
+    alias: [
+      {
+        find: '@components',
+        replacement: path.resolve(__dirname, './src/components')
+      },
+      {
+        find: '@services',
+        replacement: path.resolve(__dirname, './src/services')
+      },
+      {
+        find: '@hooks',
+        replacement: path.resolve(__dirname, './src/hooks')
+      },
+      {
+        find: '@lib',
+        replacement: path.resolve(__dirname, './src/lib')
+      },
+      {
+        find: '@models',
+        replacement: path.resolve(__dirname, './src/models')
+      },
+      {
+        find: '@pages',
+        replacement: path.resolve(__dirname, './src/pages')
+      },
+      {
+        find: '@type',
+        replacement: path.resolve(__dirname, './src/types')
+      },
+      {
+        find: '@utils',
+        replacement: path.resolve(__dirname, './src/utils')
+      },
+      {
+        find: '@routes',
+        replacement: path.resolve(__dirname, './src/routes')
+      }
+    ]
   },
   css: {
     modules: {
       localsConvention: 'camelCase'
+    }
+  },
+  server: {
+    fs: {
+      cachedChecks: false
     }
   }
 })

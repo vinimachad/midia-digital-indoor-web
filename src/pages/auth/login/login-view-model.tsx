@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { useState } from 'react'
 import useHandlerError from '@hooks/error/use-handler-error'
-import userModel from '@models/user'
+import userModel from '@models/user/user'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@hooks/context/auth-context'
 import { useForm } from 'react-hook-form'

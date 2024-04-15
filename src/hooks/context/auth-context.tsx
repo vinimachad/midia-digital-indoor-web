@@ -1,5 +1,5 @@
-import { User } from '@type/user'
-import userModel from '@models/user'
+import { User } from '@type/user/user'
+import userModel from '@models/user/user'
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
 import cookies from '@lib/cookies'
 import { useNavigate } from 'react-router-dom'
