@@ -16,9 +16,9 @@ export async function updateCommercials(): Promise<APIResponse<undefined>> {
   return await serviceRequest.put('/commercial/update')
 }
 
-export async function createAnalysis(data: FormData) {
+export async function createAnalysis(data: FormData): Promise<APIResponse<void>> {
   serviceRequest.setAuthorization(cookies.accessToken.get() ?? '')
-  await serviceRequest.post('/commercial/create/review', data, {
+  return await serviceRequest.post('/commercial/create/review', data, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }

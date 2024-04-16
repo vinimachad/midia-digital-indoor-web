@@ -6,6 +6,7 @@ import { twMerge } from 'tailwind-merge'
 import RealTimePreview from '@components/real-time-preview'
 import UploadMenu from './upload-menu'
 import Header from './header'
+import { Toaster } from '@components/ui/toaster'
 
 export default function Overview() {
   return (
@@ -29,6 +30,7 @@ export default function Overview() {
         </TabsContent>
         <TabsContent value="commercials">Change your password here.</TabsContent>
       </Tabs>
+      <Toaster />
     </section>
   )
 }

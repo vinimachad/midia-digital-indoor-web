@@ -23,18 +23,18 @@ export const dropzoneVariants = tv({
 export type DropzoneStates = VariantProps<typeof dropzoneVariants>['state']
 
 interface Props extends VariantProps<typeof dropzoneVariants> {
-  isLoading: boolean
+  isSkeleton: boolean
   previewUrl?: string
   onDrop?: <T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) => void
   onDragEnter?: DragEventHandler<HTMLElement>
   onDragLeave?: DragEventHandler<HTMLElement>
-  onSuccessAcceptFile: (file: File) => void
+  onSuccessAcceptFile?: (file: File) => void
 }
 
 export default function DropZone({
   state,
   previewUrl,
-  isLoading = false,
+  isSkeleton = false,
   onDrop,
   onDragEnter,
   onDragLeave,
@@ -74,7 +74,7 @@ export default function DropZone({
 
   return (
     <>
-      {isLoading ? (
+      {isSkeleton ? (
         <div className="flex h-full flex-1 flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-200">
           <div className="flex h-full w-full flex-col items-center justify-center space-y-4">
             <Skeleton className="h-[40px] w-[40px] " />

@@ -5,14 +5,19 @@ import UploadFormDialog, { UploadRequest } from './upload-form-dialog'
 import homesModel from '@models/user/homes-model'
 import { Homes } from '@type/user/homes'
 import commercialModel from '@models/commercial'
+import { useToast } from '@components/ui/use-toast'
+import { AppErrorTypes } from '@type/app-error'
 
 export default function UploadMenu() {
+  const { toast } = useToast()
   const { getUploadMenu } = homesModel()
-  const [openDialog, setOpenDialog] = useState(false)
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
-  const [menu, setMenu] = useState<Homes.UploadMenu[]>([])
-  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [openDialog, setOpenDialog] = useState(false)
+  const [menu, setMenu] = useState<Homes.UploadMenu[]>([])
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null)
+  const [finishUploadTried, setFinishUploadTried] = useState(false)
+
   const cardStateMapping: Record<Homes.UploadMenuStatus, DropzoneStates> = {
     ACTIVE: 'uploaded',
     BLOCKED: 'blocked',
@@ -21,16 +26,15 @@ export default function UploadMenu() {
   }
 
   useEffect(() => {
-    getUploadMenu().then((res) => {
-      setIsLoading(false)
-      if (res.value) {
-        setMenu(res.value)
-      } else if (res.error) {
-        console.log('occorreu um erro', res.error)
-      }
-      return
-    })
-  }, [])
+    handleGetUploadMenu()
+  }, [finishUploadTried])
+
+  async function handleGetUploadMenu() {
+    setIsLoading(true)
+    const { value } = await getUploadMenu()
+    setIsLoading(false)
+    if (value) setMenu(value)
+  }
 
   async function didSubmitUploadAnalysis(data: UploadRequest) {
     if (selectedCardIndex != null && uploadedFile) {
@@ -39,29 +43,46 @@ export default function UploadMenu() {
       formData.set('title', data.title)
       formData.set('description', data.description)
       formData.set('index', selectedCardIndex.toString())
-      await commercialModel.createAnalysis(formData)
+      const { error } = await commercialModel.createAnalysis(formData)
+      if (error) {
+        const apiError = error as AppErrorTypes.APIError
+        toast({
+          variant: 'destructive',
+          title: apiError.title,
+          description: apiError.message
+        })
+      }
+      setFinishUploadTried(true)
     }
   }
 
   return (
     <>
       <div className={styles.dropzoneContainer}>
-        {menu.map((item) => {
-          const state = cardStateMapping[item.status]
-          return (
-            <Dropzone
-              isLoading={isLoading}
-              state={state}
-              key={item.index}
-              previewUrl={item.url}
-              onSuccessAcceptFile={(file) => {
-                setOpenDialog(true)
-                setUploadedFile(file)
-                setSelectedCardIndex(item.index)
-              }}
-            />
-          )
-        })}
+        {isLoading ? (
+          <>
+            <Dropzone isSkeleton />
+            <Dropzone isSkeleton />
+            <Dropzone isSkeleton />
+          </>
+        ) : (
+          menu.map((item) => {
+            const state = cardStateMapping[item.status]
+            return (
+              <Dropzone
+                isSkeleton={isLoading}
+                state={state}
+                key={item.index}
+                previewUrl={item.url}
+                onSuccessAcceptFile={(file) => {
+                  setOpenDialog(true)
+                  setUploadedFile(file)
+                  setSelectedCardIndex(item.index)
+                }}
+              />
+            )
+          })
+        )}
       </div>
       <UploadFormDialog
         file={uploadedFile}
