@@ -67,7 +67,7 @@ export default function DropZone({
 
   function didDrop<T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) {
     if (fileRejections.length > 0) setDropzoneState('failed')
-    if (acceptedFiles.length > 0) {
+    if (acceptedFiles.length > 0 && onSuccessAcceptFile) {
       onSuccessAcceptFile(acceptedFiles[0])
     }
   }
