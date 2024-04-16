@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import Dropzone from '@components/dropzone'
+import Dropzone, { DropzoneStates } from '@components/dropzone'
 import { useEffect, useState } from 'react'
 import UploadFormDialog, { UploadRequest } from './upload-form-dialog'
 import homesModel from '@models/user/homes-model'
@@ -12,9 +12,17 @@ export default function UploadMenu() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
   const [menu, setMenu] = useState<Homes.UploadMenu[]>([])
   const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const cardStateMapping: Record<Homes.UploadMenuStatus, DropzoneStates> = {
+    ACTIVE: 'uploaded',
+    BLOCKED: 'blocked',
+    TO_UPLOAD: 'toUpload',
+    PENDING_ANALYSIS: 'pendingAnalysis'
+  }
 
   useEffect(() => {
     getUploadMenu().then((res) => {
+      setIsLoading(false)
       if (res.value) {
         setMenu(res.value)
       } else if (res.error) {
@@ -39,24 +47,10 @@ export default function UploadMenu() {
     <>
       <div className={styles.dropzoneContainer}>
         {menu.map((item) => {
-          let state: 'toUpload' | 'blocked' | 'uploaded' | 'failed' | 'onFocus' | 'pendingAnalysis' | undefined
-          switch (item.status) {
-            case Homes.UploadMenuStatus.TO_UPLOAD:
-              state = 'toUpload'
-              break
-            case Homes.UploadMenuStatus.BLOCKED:
-              state = 'blocked'
-              break
-            case Homes.UploadMenuStatus.PENDING_ANALYSIS:
-              state = 'pendingAnalysis'
-              break
-            case Homes.UploadMenuStatus.ACTIVE:
-              state = 'uploaded'
-              break
-          }
-
+          const state = cardStateMapping[item.status]
           return (
             <Dropzone
+              isLoading={isLoading}
               state={state}
               key={item.index}
               previewUrl={item.url}

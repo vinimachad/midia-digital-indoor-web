@@ -4,8 +4,9 @@ import { DropEvent, FileRejection, useDropzone } from 'react-dropzone'
 import { VariantProps, tv } from 'tailwind-variants'
 import { DragEventHandler, useState } from 'react'
 import { AspectRatio } from '@components/ui/aspect-ratio'
+import { Skeleton } from '@components/ui/skeleton'
 
-const dropzoneVariants = tv({
+export const dropzoneVariants = tv({
   base: styles.baseStatus,
   variants: {
     state: {
@@ -19,7 +20,10 @@ const dropzoneVariants = tv({
   }
 })
 
+export type DropzoneStates = VariantProps<typeof dropzoneVariants>['state']
+
 interface Props extends VariantProps<typeof dropzoneVariants> {
+  isLoading: boolean
   previewUrl?: string
   onDrop?: <T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) => void
   onDragEnter?: DragEventHandler<HTMLElement>
@@ -27,7 +31,15 @@ interface Props extends VariantProps<typeof dropzoneVariants> {
   onSuccessAcceptFile: (file: File) => void
 }
 
-export default function DropZone({ previewUrl, state, onDrop, onDragEnter, onDragLeave, onSuccessAcceptFile }: Props) {
+export default function DropZone({
+  state,
+  previewUrl,
+  isLoading = false,
+  onDrop,
+  onDragEnter,
+  onDragLeave,
+  onSuccessAcceptFile
+}: Props) {
   const [dropzoneState, setDropzoneState] = useState(state)
 
   const acceptedFileTypes = {
@@ -61,19 +73,36 @@ export default function DropZone({ previewUrl, state, onDrop, onDragEnter, onDra
   }
 
   return (
-    <button className={dropzoneVariants({ state: dropzoneState })} disabled={state === 'blocked'} {...getRootProps()}>
-      <input {...getInputProps()} />
-      {state === 'blocked' && <Lock />}
-      {previewUrl ? (
-        <AspectRatio ratio={16 / 9}>
-          <img src={previewUrl} className={styles.uploadPreview} />
-        </AspectRatio>
+    <>
+      {isLoading ? (
+        <div className="flex h-full flex-1 flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-200">
+          <div className="flex h-full w-full flex-col items-center justify-center space-y-4">
+            <Skeleton className="h-[40px] w-[40px] " />
+            <Skeleton className="h-4 w-[30%]" />
+            <Skeleton className="h-4 w-[50%]" />
+            <Skeleton className="h-4 w-[40%]" />
+          </div>
+        </div>
       ) : (
-        <p className={styles.text}>
-          {state === 'blocked' && 'Para adicionar uma nova propaganda é preciso atualizar o seu plano'}
-          {state === 'toUpload' && 'Arraste e solte ou clique para adicionar uma propaganda'}
-        </p>
+        <button
+          className={dropzoneVariants({ state: dropzoneState })}
+          disabled={state === 'blocked'}
+          {...getRootProps()}
+        >
+          <input {...getInputProps()} />
+          {state === 'blocked' && <Lock />}
+          {previewUrl ? (
+            <AspectRatio ratio={16 / 9}>
+              <img src={previewUrl} className={styles.uploadPreview} />
+            </AspectRatio>
+          ) : (
+            <p className={styles.text}>
+              {state === 'blocked' && 'Para adicionar uma nova propaganda é preciso atualizar o seu plano'}
+              {state === 'toUpload' && 'Arraste e solte ou clique para adicionar uma propaganda'}
+            </p>
+          )}
+        </button>
       )}
-    </button>
+    </>
   )
 }
