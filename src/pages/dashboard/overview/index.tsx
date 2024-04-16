@@ -4,7 +4,7 @@ import PresentationChart from '@components/charts/presentation-chart'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
 import { twMerge } from 'tailwind-merge'
 import RealTimePreview from '@components/real-time-preview'
-import DropZoneContainer from './drop-zone-container'
+import UploadMenu from './upload-menu'
 import Header from './header'
 
 export default function Overview() {
@@ -20,7 +20,7 @@ export default function Overview() {
         <TabsContent value="overview">
           <h4 className={twMerge('highlight', 'mb-2')}>Suas propagandas</h4>
           <div className={styles.overviewGrid}>
-            <DropZoneContainer />
+            <UploadMenu />
             <div className={styles.statisticsContainer}>
               <PresentationChart />
               <DetailedCard />

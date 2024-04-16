@@ -6,7 +6,7 @@ import homesModel from '@models/user/homes-model'
 import { Homes } from '@type/user/homes'
 import commercialModel from '@models/commercial'
 
-export default function DropZoneContainer() {
+export default function UploadMenu() {
   const { getUploadMenu } = homesModel()
   const [openDialog, setOpenDialog] = useState(false)
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
