@@ -15,6 +15,7 @@ import {
 import { AspectRatio } from '@radix-ui/react-aspect-ratio'
 import { z } from 'zod'
 import Input from '@components/input/input'
+import { useState } from 'react'
 
 const required_error = 'Este campo é obrigatório'
 const inputSchema = z.object({
@@ -39,11 +40,14 @@ export default function UploadFormDialog({ file, openDialog, onCloseDialog, onSu
     formState: { errors }
   } = useForm<Inputs>({ resolver: zodResolver(inputSchema) })
   const previewUrl = file ? URL.createObjectURL(file) : null
+  const [isLoading, setIsLoading] = useState(false)
 
   async function didSubmit(data: Inputs) {
     if (!file) return
     reset()
+    setIsLoading(true)
     await onSubmit({ ...data, file: file })
+    setIsLoading(false)
     onCloseDialog()
   }
 
@@ -80,8 +84,12 @@ export default function UploadFormDialog({ file, openDialog, onCloseDialog, onSu
             </AspectRatio>
           )}
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={didClose}>{'Cancelar upload'}</AlertDialogCancel>
-            <AlertDialogAction type="submit">Enviar para análise</AlertDialogAction>
+            <AlertDialogCancel disabled={isLoading} onClick={didClose}>
+              {'Cancelar upload'}
+            </AlertDialogCancel>
+            <AlertDialogAction isLoading={isLoading} disabled={isLoading} type="submit">
+              Enviar para análise
+            </AlertDialogAction>
           </AlertDialogFooter>
         </form>
       </AlertDialogContent>

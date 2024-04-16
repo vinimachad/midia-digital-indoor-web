@@ -34,6 +34,14 @@ export default function ServiceRequest() {
     return await fetch(api.post(path, data, config))
   }
 
+  async function patch<Response>(
+    path: string,
+    data?: any,
+    config?: AxiosRequestConfig<any>
+  ): Promise<APIResponse<Response>> {
+    return await fetch(api.patch(path, data, config))
+  }
+
   async function fetch(request: Promise<AxiosResponse<any, any>>) {
     try {
       const { data } = await request
@@ -48,5 +56,5 @@ export default function ServiceRequest() {
     api.defaults.headers['Authorization'] = `Bearer ${token}`
   }
 
-  return { get, put, post, setAuthorization }
+  return { get, put, post, patch, setAuthorization }
 }

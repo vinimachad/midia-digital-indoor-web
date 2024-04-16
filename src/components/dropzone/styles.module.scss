@@ -19,3 +19,11 @@
 .failed {
   @apply border-rose-500 text-rose-500;
 }
+
+.pending-analysis {
+  @apply border-amber-400;
+
+  .upload-preview {
+    @apply h-full w-full rounded-lg object-contain;
+  }
+}

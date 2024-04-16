@@ -37,3 +37,12 @@ export namespace User {
     }
   }
 }
+
+export namespace CommercialAnalysis {
+  export type Request = {
+    index: number
+    title: string
+    description: string
+    file: File
+  }
+}

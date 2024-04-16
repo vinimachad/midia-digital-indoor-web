@@ -4,6 +4,7 @@ import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { cn } from '@lib/shadcn'
 import { buttonVariants } from '@components/ui/button'
 import { VariantProps, cva } from 'class-variance-authority'
+import { Loader2 } from 'lucide-react'
 
 const alertDialogDescriptionVariation = cva('', {
   variants: {
@@ -26,6 +27,10 @@ const alertDialogDescriptionVariation = cva('', {
 interface AlertDialogDescriptionProps
   extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>,
     VariantProps<typeof alertDialogDescriptionVariation> {}
+
+interface AlertDialogActionProps extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> {
+  isLoading?: boolean
+}
 
 const AlertDialog = AlertDialogPrimitive.Root
 
@@ -98,9 +103,11 @@ AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayNam
 
 const AlertDialogAction = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Action ref={ref} className={cn(buttonVariants(), className)} {...props} />
+  AlertDialogActionProps
+>(({ isLoading = false, className, ...props }, ref) => (
+  <AlertDialogPrimitive.Action ref={ref} className={cn(buttonVariants(), className)} {...props}>
+    {isLoading ? <Loader2 className="animate-spin" /> : props.children}
+  </AlertDialogPrimitive.Action>
 ))
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 

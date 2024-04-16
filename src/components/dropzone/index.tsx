@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import { DropEvent, FileRejection, useDropzone } from 'react-dropzone'
 import { VariantProps, tv } from 'tailwind-variants'
 import { DragEventHandler, useState } from 'react'
+import { AspectRatio } from '@components/ui/aspect-ratio'
 
 const dropzoneVariants = tv({
   base: styles.baseStatus,
@@ -19,13 +20,14 @@ const dropzoneVariants = tv({
 })
 
 interface Props extends VariantProps<typeof dropzoneVariants> {
+  previewUrl?: string
   onDrop?: <T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) => void
   onDragEnter?: DragEventHandler<HTMLElement>
   onDragLeave?: DragEventHandler<HTMLElement>
   onSuccessAcceptFile: (file: File) => void
 }
 
-export default function DropZone({ state, onDrop, onDragEnter, onDragLeave, onSuccessAcceptFile }: Props) {
+export default function DropZone({ previewUrl, state, onDrop, onDragEnter, onDragLeave, onSuccessAcceptFile }: Props) {
   const [dropzoneState, setDropzoneState] = useState(state)
 
   const acceptedFileTypes = {
@@ -62,10 +64,16 @@ export default function DropZone({ state, onDrop, onDragEnter, onDragLeave, onSu
     <button className={dropzoneVariants({ state: dropzoneState })} disabled={state === 'blocked'} {...getRootProps()}>
       <input {...getInputProps()} />
       {state === 'blocked' && <Lock />}
-      <p className={styles.text}>
-        {state === 'blocked' && 'Para adicionar uma nova propaganda é preciso atualizar o seu plano'}
-        {state === 'toUpload' && 'Arraste e solte ou clique para adicionar uma propaganda'}
-      </p>
+      {previewUrl ? (
+        <AspectRatio ratio={16 / 9}>
+          <img src={previewUrl} className={styles.uploadPreview} />
+        </AspectRatio>
+      ) : (
+        <p className={styles.text}>
+          {state === 'blocked' && 'Para adicionar uma nova propaganda é preciso atualizar o seu plano'}
+          {state === 'toUpload' && 'Arraste e solte ou clique para adicionar uma propaganda'}
+        </p>
+      )}
     </button>
   )
 }
