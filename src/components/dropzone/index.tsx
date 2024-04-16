@@ -5,6 +5,7 @@ import { VariantProps, tv } from 'tailwind-variants'
 import { DragEventHandler, useState } from 'react'
 import { AspectRatio } from '@components/ui/aspect-ratio'
 import { Skeleton } from '@components/ui/skeleton'
+import { Badge } from '@components/ui/badge'
 
 export const dropzoneVariants = tv({
   base: styles.baseStatus,
@@ -104,6 +105,12 @@ export default function DropZone({
           disabled={state === 'blocked'}
           {...getRootProps()}
         >
+          {state === 'pendingAnalysis' && (
+            <Badge className="absolute right-3 top-3 z-10" variant="warn">
+              Em análise
+            </Badge>
+          )}
+
           <input {...getInputProps()} />
           {state === 'blocked' && <Lock />}
           {previewUrl ? (
