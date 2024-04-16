@@ -74,6 +74,7 @@ export default function UploadMenu() {
                 key={item.index}
                 previewUrl={item.url}
                 isSkeleton={isLoading}
+                newUploadAvailable={item.newUploadAvailable}
                 onShowUploadCommercialUnavailable={() => {
                   toast({
                     variant: 'warn',
