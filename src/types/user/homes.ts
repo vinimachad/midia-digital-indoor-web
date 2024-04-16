@@ -11,5 +11,6 @@ export namespace Homes {
     title: string
     url?: string
     status: UploadMenuStatus
+    newUploadAvailable: boolean
   }
 }

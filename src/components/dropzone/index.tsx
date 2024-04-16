@@ -25,20 +25,24 @@ export type DropzoneStates = VariantProps<typeof dropzoneVariants>['state']
 interface Props extends VariantProps<typeof dropzoneVariants> {
   isSkeleton: boolean
   previewUrl?: string
+  newUploadAvailable?: boolean
   onDrop?: <T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) => void
   onDragEnter?: DragEventHandler<HTMLElement>
   onDragLeave?: DragEventHandler<HTMLElement>
   onSuccessAcceptFile?: (file: File) => void
+  onShowUploadCommercialUnavailable?: () => void
 }
 
 export default function DropZone({
   state,
   previewUrl,
   isSkeleton = false,
+  newUploadAvailable,
   onDrop,
   onDragEnter,
   onDragLeave,
-  onSuccessAcceptFile
+  onSuccessAcceptFile,
+  onShowUploadCommercialUnavailable
 }: Props) {
   const [dropzoneState, setDropzoneState] = useState(state)
 
@@ -67,6 +71,17 @@ export default function DropZone({
 
   function didDrop<T extends File>(acceptedFiles: T[], fileRejections: FileRejection[], event: DropEvent) {
     if (fileRejections.length > 0) setDropzoneState('failed')
+
+    if (
+      (state === 'toUpload' || state === 'pendingAnalysis') &&
+      !newUploadAvailable &&
+      onShowUploadCommercialUnavailable
+    ) {
+      onShowUploadCommercialUnavailable()
+      setDropzoneState(state)
+      return
+    }
+
     if (acceptedFiles.length > 0 && onSuccessAcceptFile) {
       onSuccessAcceptFile(acceptedFiles[0])
     }

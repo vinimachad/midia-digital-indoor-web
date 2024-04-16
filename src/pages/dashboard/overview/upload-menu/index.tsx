@@ -70,10 +70,18 @@ export default function UploadMenu() {
             const state = cardStateMapping[item.status]
             return (
               <Dropzone
-                isSkeleton={isLoading}
                 state={state}
                 key={item.index}
                 previewUrl={item.url}
+                isSkeleton={isLoading}
+                onShowUploadCommercialUnavailable={() => {
+                  toast({
+                    variant: 'warn',
+                    title: 'Upload indísponivel',
+                    description:
+                      'Para realizar um novo upload você precisa aguardar o tempo mínimo de 20 dias após o seu ultimo upload'
+                  })
+                }}
                 onSuccessAcceptFile={(file) => {
                   setOpenDialog(true)
                   setUploadedFile(file)
