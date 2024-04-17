@@ -74,7 +74,7 @@ export default function DropZone({
     if (fileRejections.length > 0) setDropzoneState('failed')
 
     if (
-      (state === 'toUpload' || state === 'pendingAnalysis') &&
+      (state === 'uploaded' || state === 'pendingAnalysis') &&
       !newUploadAvailable &&
       onShowUploadCommercialUnavailable
     ) {
@@ -105,9 +105,9 @@ export default function DropZone({
           disabled={state === 'blocked'}
           {...getRootProps()}
         >
-          {state === 'pendingAnalysis' && (
-            <Badge className="absolute right-3 top-3 z-10" variant="warn">
-              Em análise
+          {(state === 'uploaded' || state === 'pendingAnalysis') && (
+            <Badge className="absolute right-3 top-3 z-10" variant={state === 'pendingAnalysis' ? 'warn' : 'positive'}>
+              {state === 'pendingAnalysis' ? 'Em análise' : 'Ativa'}
             </Badge>
           )}
 
